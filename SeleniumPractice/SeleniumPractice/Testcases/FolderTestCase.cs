@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace SeleniumPractice
 {
     [TestClass]
-    public class UnitTest1
+    public class FolderTestCase
     {
         [TestMethod]
         public void TestMethod1()
