@@ -1,13 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SeleniumPractice.Testcases;
 
 namespace SeleniumPractice
 {
     [TestClass]
-    public class FolderTestCase
+    public class FolderTestCase: BaseTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TC_001_Folder()
         {
             
         }

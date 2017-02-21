@@ -45,11 +45,18 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\BrowserManager.cs" />
+    <Compile Include="Common\CommonActions.cs" />
+    <Compile Include="Common\TestData.cs" />
+    <Compile Include="Common\WebDriver.cs" />
+    <Compile Include="Testcases\BaseTest.cs" />
     <Compile Include="Testcases\FolderTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,7 +64,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\" />
     <Folder Include="Interfaces\" />
     <Folder Include="PageActions\" />
   </ItemGroup>
