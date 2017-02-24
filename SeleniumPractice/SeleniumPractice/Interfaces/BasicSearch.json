@@ -1,0 +1,34 @@
+﻿[
+  {
+    "controlName": "search box",
+    "type": "id",
+    "value": "SearchTerm1"
+  },
+
+  {
+    "controlName": "search button",
+    "type": "id",
+    "value": "SearchButton"
+  },
+
+  {
+    "controlName": "search options",
+    "type": "id",
+    "value": "options"
+  },
+
+  {
+    "controlNam": "Peer Reviewed limiter",
+    "type": "id",
+    "value": "common_RV"
+  },
+
+  {
+    "control": "Apply related words expander",
+    "type": "id",
+    "value": "expand_thesaurus"
+  }
+  
+  
+]
+
