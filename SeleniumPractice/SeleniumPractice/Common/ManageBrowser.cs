@@ -14,42 +14,40 @@ namespace SeleniumPractice.Common
 {
    public class ManageBrowser
     {
-      
-        public static void OpenBrowser( string browsername)
+
+        public static IWebDriver driver;
+        public static void OpenBrowser(string browsername)
         {
             switch (browsername.ToUpper())
             {
                 case "CHROME":
-                   CommonAction.WebDriver.driver = new ChromeDriver();
-                    CommonAction.WebDriver.driver.Manage().Window.Maximize();
+                    driver = new ChromeDriver();
+                    driver.Manage().Window.Maximize();
                     break;
                 case "IE":
-                    CommonAction.WebDriver.driver = new InternetExplorerDriver();
-                    CommonAction.WebDriver.driver.Manage().Window.Maximize();
+                    driver = new InternetExplorerDriver();
+                    driver.Manage().Window.Maximize();
                     break;
-                case "Firefox":
-                    CommonAction.WebDriver.driver = new FirefoxDriver();
-                    CommonAction.WebDriver.driver.Manage().Window.Maximize();
+                case "FIREFOX":
+                    driver = new FirefoxDriver();
+                    driver.Manage().Window.Maximize();
                     break;
                 default:
-                    CommonAction.WebDriver.driver = new FirefoxDriver();
-                    CommonAction.WebDriver.driver.Manage().Window.Maximize();
+                    driver = new FirefoxDriver();
+                    driver.Manage().Window.Maximize();
                     break;
             }
-           
         }
 
         public static void CloseBrowser()
         {
-            CommonAction.WebDriver.driver.Manage().Cookies.DeleteAllCookies();
-            CommonAction.WebDriver.driver.Quit();
+            driver.Manage().Cookies.DeleteAllCookies();
+            driver.Quit();
             foreach (Process process in Process.GetProcessesByName("iexplore"))
             {
                 process.Kill();
             }
-        
         }
 
-       
     }
 }

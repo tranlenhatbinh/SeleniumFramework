@@ -14,12 +14,6 @@ namespace SeleniumPractice.PageObject
 {
     public class GeneralPage:CommonAction
     {
-        public static BasicSearch NavigateToEbscoPage()
-        {
-            WebDriver.driver.Navigate().GoToUrl("http://search.ebscohost.com/login.aspx?authtype=uid&user=normwright&password=pass$word&group=edsacad&profile=newacdem14");
-            return new BasicSearch();
-        }
-
         ///<summary>
         /// Method to get the class name from a method
         ///</summary>
@@ -75,13 +69,13 @@ namespace SeleniumPractice.PageObject
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return WebDriver.driver.FindElement(By.Id(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return WebDriver.driver.FindElement(By.Name(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return WebDriver.driver.FindElement(By.ClassName(control[1]));
+                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return WebDriver.driver.FindElement(By.XPath(control[1]));
+                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
             }
         }
 
