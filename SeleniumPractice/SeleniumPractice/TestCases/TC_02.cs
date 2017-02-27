@@ -27,7 +27,7 @@ namespace SeleniumPractice.TestCases
             Thread.Sleep(1);
             basicsearchpage.EnterSearchTern("test");      
             basicsearchpage.ClickSearchOption();
-            //select limiter and expander
+            //select limiter and expander1
             //basicsearchpage.SelectItemInSe       archOption("Peer Reviewed limiter");
            basicsearchpage.SelectItemInSearchOption("Apply related words expander");
         }
