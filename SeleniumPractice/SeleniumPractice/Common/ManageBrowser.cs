@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System.Diagnostics;
-using SeleniumPractice.Common;
+using OpenQA.Selenium;
 
 namespace SeleniumPractice.Common
 {
-   public class ManageBrowser
+    public class ManageBrowser
     {
-
         public static IWebDriver driver;
         public static void OpenBrowser(string browsername)
         {
@@ -47,7 +40,9 @@ namespace SeleniumPractice.Common
             {
                 process.Kill();
             }
+
         }
+
 
     }
 }

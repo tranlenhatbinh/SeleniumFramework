@@ -5,7 +5,7 @@ using SeleniumPractice.Common;
 namespace SeleniumPractice.TestCases
 {
     [TestClass]
-    public class FolderTestCases
+    public class FolderTestCases:TestBase
     {
         private BasicSearch basicSearch;
         private ResultList resultList;
