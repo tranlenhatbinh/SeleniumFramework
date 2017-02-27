@@ -25,7 +25,7 @@ namespace SeleniumPractice.PageObject
 
         public void SelectItemInSearchOption(string item)
         {
-          
+          //
             TickCheckbox(item);
         }
     }
