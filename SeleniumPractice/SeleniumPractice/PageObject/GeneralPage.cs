@@ -8,8 +8,7 @@ using System.IO;
 using OpenQA.Selenium.Interactions;
 using System.Web.Script.Serialization;
 using SeleniumPractice.Common;
-
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.PageObject
 {
@@ -94,9 +93,13 @@ namespace SeleniumPractice.PageObject
         {
             if (FindWebElement(locator).Selected == false)
             {
+               //
                 FindWebElement(locator).Click();
             }
         }
+
+     
+
 
     }
 }
