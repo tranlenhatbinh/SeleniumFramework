@@ -99,7 +99,7 @@ namespace SeleniumPractice.PageObject
         {
             if (FindWebElement(locator).Selected == false)
             {
-               
+               //
                 FindWebElement(locator).Click();
             }
         }
