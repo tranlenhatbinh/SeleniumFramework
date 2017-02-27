@@ -81,6 +81,7 @@
   <ItemGroup>
     <None Include="Interfaces\AdvanceSearch.json" />
     <None Include="Interfaces\BasicSearch.json" />
+    <None Include="Interfaces\PDFViewer.json" />
     <None Include="Interfaces\ResultList.json" />
     <None Include="packages.config" />
   </ItemGroup>
