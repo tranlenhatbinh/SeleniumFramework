@@ -26,5 +26,11 @@ namespace SeleniumPractice.PageObject
         {
             TickCheckbox(item);
         }
+
+        public void ConductSearch(string searchterm)
+        {
+            EnterValue("search box", searchterm);
+            ClickControl("search button");
+        }
     }
 }

@@ -10,10 +10,12 @@ namespace SeleniumPractice.Common
 {
    public class CommonAction: ManageBrowser
     {
-        public class WebDriver
+        // move to managebrowser
+        public static void NavigateToEbscoPage()
         {
-            public static IWebDriver driver;
+            ManageBrowser.driver.Navigate().GoToUrl(TestData.ebscodURL);
         }
-        
+        // Enter, click, verifytext
+
     }
 }

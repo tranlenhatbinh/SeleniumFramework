@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace SeleniumPractice.Common
 {
- public class TestData
+    public  class TestData
     {
+        public static string browser = ConfigurationManager.AppSettings["browser"];
+        public static string ebscodURL = ConfigurationManager.AppSettings["url"];
+        public static string searchTerm = "test";
     }
 }

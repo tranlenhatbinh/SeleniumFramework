@@ -12,7 +12,7 @@ using SeleniumPractice.PageObject;
 namespace SeleniumPractice.TestCases
 {
     [TestClass]
-  public class TestbaseDemo: GeneralPage
+  public class TestBase: GeneralPage
     {
       [TestInitialize]
       public void TestInitialize()
