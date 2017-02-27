@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SeleniumPractice.Common;
 using SeleniumPractice.PageObject;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace SeleniumPractice.PageObject
 {
@@ -24,6 +25,7 @@ namespace SeleniumPractice.PageObject
 
         public void SelectItemInSearchOption(string item)
         {
+          
             TickCheckbox(item);
         }
     }

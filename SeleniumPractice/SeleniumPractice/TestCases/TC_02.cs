@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SeleniumPractice.PageObject;
+using System.Threading;
 
 
 namespace SeleniumPractice.TestCases
@@ -23,11 +24,12 @@ namespace SeleniumPractice.TestCases
         {
             BasicSearch basicsearchpage = new BasicSearch();
             basicsearchpage = NavigateToEbscoPage();
-            //basicsearchpage.EnterSearchTern("test");      
-            //basicsearchpage.ClickSearchOption();
+            Thread.Sleep(1);
+            basicsearchpage.EnterSearchTern("test");      
+            basicsearchpage.ClickSearchOption();
             //select limiter and expander
-           // basicsearchpage.SelectItemInSearchOption("Peer Reviewed limiter");
-            //basicsearchpage.SelectItemInSearchOption("Apply related words expander");
+            //basicsearchpage.SelectItemInSe       archOption("Peer Reviewed limiter");
+           basicsearchpage.SelectItemInSearchOption("Apply related words expander");
         }
     }
 }
