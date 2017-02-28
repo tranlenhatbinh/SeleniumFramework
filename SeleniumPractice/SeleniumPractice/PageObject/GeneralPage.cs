@@ -64,13 +64,13 @@ namespace SeleniumPractice.PageObject
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return driver.FindElement(By.Id(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return driver.FindElement(By.Name(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return driver.FindElement(By.ClassName(control[1]));
+                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return driver.FindElement(By.XPath(control[1]));
+                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
             }
         }
 
