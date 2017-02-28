@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="Interfaces\AdvanceSearch.json" />
     <None Include="Interfaces\BasicSearch.json" />
     <None Include="Interfaces\PDFViewer.json" />
