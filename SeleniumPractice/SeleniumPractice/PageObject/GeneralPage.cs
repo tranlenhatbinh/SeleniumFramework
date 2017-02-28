@@ -1,14 +1,9 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Diagnostics;
 using System.IO;
-using OpenQA.Selenium.Interactions;
 using System.Web.Script.Serialization;
 using SeleniumPractice.Common;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.PageObject
 {
@@ -69,13 +64,13 @@ namespace SeleniumPractice.PageObject
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
+                    return driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
+                    return driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
+                    return driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
+                    return driver.FindElement(By.XPath(control[1]));
             }
         }
 
