@@ -8,7 +8,7 @@ namespace SeleniumPractice.TestCases
   public  class BreadboxTestCases: GeneralPage
     {
         [TestMethod]
-        public void TC_002()
+        public void TC_02_BreadBox()
         {
            // BasicSearch basicsearchpage = new BasicSearch();
            // basicsearchpage = NavigateToEbscoPage();
