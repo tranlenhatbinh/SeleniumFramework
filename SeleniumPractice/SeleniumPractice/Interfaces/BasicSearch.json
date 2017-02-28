@@ -24,10 +24,16 @@
   },
 
   {
-    "control": "Apply related words expander",
+    "controlName": "Apply related words expander",
     "type": "id",
     "value": "expand_thesaurus"
-  }
+  },
+   
+   {
+     "controlName":"Advance Search",
+     "type":"id",
+     "value":"advanced"
+   }
   
   
 ]
