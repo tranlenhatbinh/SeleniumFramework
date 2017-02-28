@@ -18,7 +18,7 @@
   },
 
   {
-    "controlNam": "Peer Reviewed limiter",
+    "controlName": "Peer Reviewed limiter",
     "type": "id",
     "value": "common_RV"
   },
