@@ -12,7 +12,7 @@
   },
 
   {
-    "control": " Show More Contain Provider cluster",
+    "control": "Show More Contain Provider cluster",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilterContent']//a[@title='Show More']"
   },
@@ -27,7 +27,18 @@
     "controlName": "English Language cluster",
     "type": "id",
     "value": "_cluster_Language%24english"
-  }
+  },
 
-  
+  {
+    "controlName": "Business Source Complete",
+    "type": "id",
+    "value": "modal__db_filter_bth"
+  },
+
+  // Content provider popup
+  {
+    "controlName": "Update button",
+    "type": "xpath",
+    "value": "//div[@id='multiSelectDbFilter']//input[@value='Update']"
+  }
 ]

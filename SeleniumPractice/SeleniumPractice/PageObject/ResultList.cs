@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace SeleniumPractice.PageObject
 {
-public class ResultList
+public class ResultList:GeneralPage
     {
-
+        public void goToContentProvider()
+        {
+            ClickControl("Contain Provider cluster");
+            ClickControl("Show More Contain Provider cluster");
+        }
     }
 }
