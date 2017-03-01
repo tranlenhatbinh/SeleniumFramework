@@ -29,7 +29,6 @@ namespace SeleniumPractice.Common
                     driver.Manage().Window.Maximize();
                     break;
             }
-            return driver;
         }
 
 
@@ -49,6 +48,7 @@ namespace SeleniumPractice.Common
             }
 
         }
+
 
     }
 }

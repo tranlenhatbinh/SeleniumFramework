@@ -1,9 +1,14 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Diagnostics;
 using System.IO;
+using OpenQA.Selenium.Interactions;
 using System.Web.Script.Serialization;
 using SeleniumPractice.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.PageObject
 {
@@ -38,9 +43,6 @@ namespace SeleniumPractice.PageObject
                 case "BasicSearch":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
                     break;
-                case "ResultList":
-                    content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
-                    break;
                 default:
                     break;
                 }
@@ -61,41 +63,43 @@ namespace SeleniumPractice.PageObject
         ///<summary>
         /// Method to find a web element
         ///</summary>
-        public IWebElement FindWebElement(IWebDriver driver, string locator)
+        public IWebElement FindWebElement(string locator)
         {
             string[] control = GetControlValue(locator);
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return driver.FindElement(By.Id(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return driver.FindElement(By.Name(control[1]));
+                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return driver.FindElement(By.ClassName(control[1]));
+                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return driver.FindElement(By.XPath(control[1]));
+                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
             }
         }
 
-        public void ClickControl(IWebDriver driver, string locator)
+        public void ClickControl(string locator)
         {
-            FindWebElement(driver, locator).Click();
+            FindWebElement(locator).Click();
+        }
+        public void EnterValue(string locator, string value)
+        {
+            FindWebElement(locator).Clear();
+            FindWebElement(locator).SendKeys(value);
         }
 
-        public void EnterValue(IWebDriver driver, string locator, string value)
+        public void TickCheckbox(string locator)
         {
-            FindWebElement(driver, locator).Clear();
-            FindWebElement(driver, locator).SendKeys(value);
-        }
-
-        public void TickCheckbox(IWebDriver driver, string locator)
-        {
-            if (FindWebElement(driver, locator).Selected == false)
+            if (FindWebElement(locator).Selected == false)
             {
-               
-                FindWebElement(driver, locator).Click();
+               //
+                FindWebElement(locator).Click();
             }
         }
+
+     
+
 
     }
 }

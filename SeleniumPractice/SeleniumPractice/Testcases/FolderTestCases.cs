@@ -4,10 +4,7 @@ using SeleniumPractice.Common;
 
 using System.Threading;
 
-using OpenQA.Selenium;
-
 namespace SeleniumPractice.TestCases
-
 {
     [TestClass]
     public class FolderTestCases: TestBase
@@ -28,16 +25,11 @@ namespace SeleniumPractice.TestCases
         public void TC01_Folder()
         {
             // 1. Conduct a Search term on basic search textbox
-            basicSearch = new BasicSearch(driver);
-            basicSearch.ConductSearch(driver, TestData.searchTerm);
+            basicSearch = new BasicSearch();
+            basicSearch.ConductSearch(TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
-            resultList = new ResultList(driver);
-        }
-
-        [TestCleanup]
-        public void Testcleanup()
-        {
-            CloseBrowser(driver);
+            resultList = new ResultList();
+            //
         }
     }
 }

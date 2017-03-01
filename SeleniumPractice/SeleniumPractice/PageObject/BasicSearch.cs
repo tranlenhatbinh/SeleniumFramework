@@ -12,34 +12,27 @@ namespace SeleniumPractice.PageObject
 {
    public class BasicSearch: GeneralPage
     {
-        IWebDriver driver;
-
-        public BasicSearch (IWebDriver driver)
+        public void ClickSearchOption()
         {
-            this.driver = driver;
+            ClickControl("search options");
         }
 
-        public void ClickSearchOption(IWebDriver driver)
-        {
-            ClickControl(driver, "search options");
-        }
-
-        public void EnterSearchTern(IWebDriver driver, string searchterm)
+        public void EnterSearchTern(string searchterm)
         {
           
-            EnterValue(driver, "search box", searchterm);
+            EnterValue("search box", searchterm);
         }
 
-        public void SelectItemInSearchOption(IWebDriver driver, string item)
+        public void SelectItemInSearchOption(string item)
         {
           //
-            TickCheckbox(driver, item);
+            TickCheckbox(item);
         }
 
-        public void ConductSearch(IWebDriver driver, string searchterm)
+        public void ConductSearch(string searchterm)
         {
-            EnterValue(driver, "search box", searchterm);
-            ClickControl(driver, "search button");
+            EnterValue("search box", searchterm);
+            ClickControl("search button");
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using SeleniumPractice.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 
 namespace SeleniumPractice.TestCases
 {
