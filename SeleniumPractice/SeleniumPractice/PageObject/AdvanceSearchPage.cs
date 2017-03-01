@@ -7,13 +7,17 @@ using OpenQA.Selenium;
 
 namespace SeleniumPractice.PageObject
 {
-    public class AdvanceSearch : GeneralPage
+    public class AdvanceSearchPage : GeneralPage
     {
         IWebDriver driver;
 
-        public AdvanceSearch(IWebDriver driver)
-    {
+        public AdvanceSearchPage(IWebDriver driver)
+         {
             this.driver = driver;
+         }
+
+        public void ConductAdvanceSearch(IWebDriver driver, string locator, string searchterm, string operatorterm) {
         }
+
     }
 }
