@@ -26,15 +26,17 @@ namespace SeleniumPractice.TestCases
         {
             basicsearch = new BasicSearch(driver);
             basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
-            basicsearch.ClickSearchOption(driver);
-            basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+          //  basicsearch.ClickSearchOption(driver);
+          //  basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+          //  basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
+            basicsearch.ClickSearchButton(driver, "search button");
         }
 
         [TestCleanup]
         public void Testcleanup()
         {
-            /*  CloseBrowser(driver)*/
-            ;
+            //CloseBrowser(driver);
+
         }
     }
 }
