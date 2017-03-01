@@ -11,8 +11,8 @@ namespace SeleniumPractice.PageObject
     {
         IWebDriver driver;
 
-        public  AdvanceSearch (IWebDriver driver)
-        {
+        public AdvanceSearch(IWebDriver driver)
+    {
             this.driver = driver;
         }
     }
