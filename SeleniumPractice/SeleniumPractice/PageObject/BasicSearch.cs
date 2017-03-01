@@ -24,7 +24,7 @@ namespace SeleniumPractice.PageObject
             ClickControl(driver, "search options");
         }
 
-        public void EnterSearchTern(IWebDriver driver, string searchterm)
+        public void EnterSearchTerm(IWebDriver driver, string searchterm)
         {
 
             EnterValue(driver, "search box", searchterm);
