@@ -38,6 +38,9 @@ namespace SeleniumPractice.PageObject
                 case "BasicSearch":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
                     break;
+                case "ResultList":
+                    content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
+                    break;
                 default:
                     break;
                 }

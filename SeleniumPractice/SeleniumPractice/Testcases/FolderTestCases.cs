@@ -18,7 +18,7 @@ namespace SeleniumPractice.TestCases
             basicSearch.ConductSearch(TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
             resultList = new ResultList();
-            resultList.goToContentProvider();
+           // resultList.goToContentProvider();
         }
     }
 }
