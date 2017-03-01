@@ -8,7 +8,7 @@ namespace SeleniumPractice.Common
 {
     public class ManageBrowser
     {
-        public IWebDriver OpenBrowser(IWebDriver driver, string browsername)
+        public static IWebDriver OpenBrowser(IWebDriver driver, string browsername)
         {
             switch (browsername.ToUpper())
             {
@@ -31,6 +31,7 @@ namespace SeleniumPractice.Common
             }
             return driver;
         }
+
 
         // move to managebrowser
         public static void NavigateToEbscoPage(IWebDriver driver)

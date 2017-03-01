@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SeleniumPractice.PageObject;
 using SeleniumPractice.Common;
+
 using System.Threading;
 
 using OpenQA.Selenium;
@@ -9,10 +10,9 @@ namespace SeleniumPractice.TestCases
 
 {
     [TestClass]
-    public class FolderTestCases: ManageBrowser
+    public class FolderTestCases: TestBase
     {
-        
-        IWebDriver driver ;
+        IWebDriver driver;
         private BasicSearch basicSearch;
         private ResultList resultList;
 
@@ -20,8 +20,10 @@ namespace SeleniumPractice.TestCases
         public void TestInitialize()
         {
             driver = OpenBrowser(driver, TestData.browser);
+
             NavigateToEbscoPage(driver);
         }
+
 
         [TestMethod]
         public void TC01_Folder()

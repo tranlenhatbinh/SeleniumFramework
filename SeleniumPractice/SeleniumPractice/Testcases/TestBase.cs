@@ -7,19 +7,23 @@ namespace SeleniumPractice.TestCases
     [TestClass]
   public class TestBase: ManageBrowser
     {
-        //IWebDriver driver;
-        ////[TestInitialize]
-        //public void TestInitialize()
-        //{
-        //    driver = OpenBrowser(driver, TestData.browser);
-        //    NavigateToEbscoPage(driver);
+       IWebDriver driver;
 
-        //}
-
-        //[TestCleanup]
-        //public void Testcleanup()
+        //public static IWebDriver getdriver()
         //{
-        //    CloseBrowser(driver);
+        //    return driver = OpenBrowser(driver, TestData.browser);
         //}
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            driver = OpenBrowser(driver, TestData.browser);
+            NavigateToEbscoPage(driver);
+
+        }
+        [TestCleanup]
+        public void Testcleanup()
+        {
+            CloseBrowser(driver);
+        }
     }
 }
