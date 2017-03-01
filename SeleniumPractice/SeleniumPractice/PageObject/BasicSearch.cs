@@ -10,29 +10,36 @@ using OpenQA.Selenium.Interactions;
 
 namespace SeleniumPractice.PageObject
 {
-   public class BasicSearch: GeneralPage
+    public class BasicSearch : GeneralPage
     {
-        public void ClickSearchOption()
+        IWebDriver driver;
+
+        public BasicSearch(IWebDriver driver)
         {
-            ClickControl("search options");
+            this.driver = driver;
         }
 
-        public void EnterSearchTern(string searchterm)
+        public void ClickSearchOption(IWebDriver driver)
         {
-          
-            EnterValue("search box", searchterm);
+            ClickControl(driver, "search options");
         }
 
-        public void SelectItemInSearchOption(string item)
+        public void EnterSearchTern(IWebDriver driver, string searchterm)
         {
-          //
-            TickCheckbox(item);
+
+            EnterValue(driver, "search box", searchterm);
         }
 
-        public void ConductSearch(string searchterm)
+        public void SelectItemInSearchOption(IWebDriver driver, string item)
         {
-            EnterValue("search box", searchterm);
-            ClickControl("search button");
+            //
+            TickCheckbox(driver, item);
+        }
+
+        public void ConductSearch(IWebDriver driver, string searchterm)
+        {
+            EnterValue(driver, "search box", searchterm);
+            ClickControl(driver, "search button");
         }
     }
 }

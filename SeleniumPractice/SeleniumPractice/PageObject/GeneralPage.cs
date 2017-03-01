@@ -1,23 +1,18 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Diagnostics;
 using System.IO;
-using OpenQA.Selenium.Interactions;
 using System.Web.Script.Serialization;
 using SeleniumPractice.Common;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.PageObject
 {
-    public class GeneralPage:CommonAction
+    public class GeneralPage : CommonAction
     {
         ///<summary>
         /// Method to get the class name from a method
         ///</summary>
-        public static string GetClassCaller( int level=4)
+        public static string GetClassCaller(int level = 4)
         {
             var m = new StackTrace().GetFrame(level).GetMethod();
             string classname = m.DeclaringType.Name;
@@ -32,20 +27,20 @@ namespace SeleniumPractice.PageObject
         }
 
 
-        public string [] GetControlValue(string namecontrol)
+        public string[] GetControlValue(string namecontrol)
         {
             string page = GetClassCaller();
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
             string content = string.Empty;
             switch (page)
-                { 
+            {
                 case "BasicSearch":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
                     break;
                 default:
                     break;
-                }
+            }
             var result = new JavaScriptSerializer().Deserialize<List<control>>(content);
             string[] control = new string[2];
             foreach (var item in result)
@@ -57,49 +52,47 @@ namespace SeleniumPractice.PageObject
                     return control;
                 }
             }
-            return null;            
+            return null;
         }
 
         ///<summary>
         /// Method to find a web element
         ///</summary>
-        public IWebElement FindWebElement(string locator)
+        public IWebElement FindWebElement(IWebDriver driver, string locator)
         {
             string[] control = GetControlValue(locator);
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
+                    return driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
+                    return driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
+                    return driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
+                    return driver.FindElement(By.XPath(control[1]));
             }
         }
 
-        public void ClickControl(string locator)
+        public void ClickControl(IWebDriver driver, string locator)
         {
-            FindWebElement(locator).Click();
-        }
-        public void EnterValue(string locator, string value)
-        {
-            FindWebElement(locator).Clear();
-            FindWebElement(locator).SendKeys(value);
+            FindWebElement(driver, locator).Click();
         }
 
-        public void TickCheckbox(string locator)
+        public void EnterValue(IWebDriver driver, string locator, string value)
         {
-            if (FindWebElement(locator).Selected == false)
+            FindWebElement(driver, locator).Clear();
+            FindWebElement(driver, locator).SendKeys(value);
+        }
+
+        public void TickCheckbox(IWebDriver driver, string locator)
+        {
+            if (FindWebElement(driver, locator).Selected == false)
             {
-               //
-                FindWebElement(locator).Click();
+
+                FindWebElement(driver, locator).Click();
             }
         }
-
-     
-
 
     }
 }

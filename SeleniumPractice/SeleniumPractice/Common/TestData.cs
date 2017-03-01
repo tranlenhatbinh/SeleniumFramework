@@ -2,7 +2,7 @@
 
 namespace SeleniumPractice.Common
 {
-    public  class TestData
+    public class TestData
     {
         public static string browser = ConfigurationManager.AppSettings["browser"];
         public static string ebscodURL = ConfigurationManager.AppSettings["url"];
