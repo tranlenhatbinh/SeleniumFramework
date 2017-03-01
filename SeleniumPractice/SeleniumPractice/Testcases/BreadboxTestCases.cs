@@ -9,7 +9,7 @@ namespace SeleniumPractice.TestCases
     {
         [TestMethod]
         public void TC_002()
-        {
+        {  //
             // BasicSearch basicsearchpage = new BasicSearch();
             // basicsearchpage = NavigateToEbscoPage();
             //basicsearchpage.EnterSearchTern("test");      
