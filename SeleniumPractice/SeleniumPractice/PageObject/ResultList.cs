@@ -8,7 +8,7 @@ using OpenQA.Selenium;
 namespace SeleniumPractice.PageObject
 {
     public class ResultList: GeneralPage
-    {
+    {   //
         IWebDriver driver;
 
         public ResultList(IWebDriver driver)
