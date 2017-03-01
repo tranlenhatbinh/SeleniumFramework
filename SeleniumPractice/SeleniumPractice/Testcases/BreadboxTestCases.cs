@@ -36,8 +36,8 @@ namespace SeleniumPractice.TestCases
         [TestCleanup]
         public void Testcleanup()
         {
-            /*  CloseBrowser(driver)*/
-            ;
+            //CloseBrowser(driver);
+
         }
     }
 }

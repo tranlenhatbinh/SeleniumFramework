@@ -41,5 +41,7 @@ namespace SeleniumPractice.PageObject
             EnterValue(driver, "search box", searchterm);
             ClickControl(driver, "search button");
         }
+
+       
     }
 }
