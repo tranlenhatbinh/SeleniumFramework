@@ -65,13 +65,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Common\CommonAction.cs" />
-    <Compile Include="Common\ManageBrowser.cs" />
-    <Compile Include="Common\TestData.cs" />
-    <Compile Include="PageObject\AdvanceSearch.cs" />
-    <Compile Include="PageObject\BasicSearch.cs" />
-    <Compile Include="PageObject\GeneralPage.cs" />
-    <Compile Include="PageObject\ResultList.cs" />
+    <Compile Include="Action\Common\CommonAction.cs" />
+    <Compile Include="Action\Common\ManageBrowser.cs" />
+    <Compile Include="Action\Common\TestData.cs" />
+    <Compile Include="Action\PageObject\AdvanceSearch.cs" />
+    <Compile Include="Action\PageObject\BasicSearch.cs" />
+    <Compile Include="Action\PageObject\GeneralPage.cs" />
+    <Compile Include="Action\PageObject\ResultList.cs" />
     <Compile Include="TestCases\BreadboxTestCases.cs" />
     <Compile Include="TestCases\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

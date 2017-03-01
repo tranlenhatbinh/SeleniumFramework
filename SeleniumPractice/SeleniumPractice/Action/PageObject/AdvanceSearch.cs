@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace SeleniumPractice.PageObject
+namespace SeleniumPractice.Action.PageObject
 {
-    public class ResultList
+    public class AdvanceSearch : GeneralPage
     {
         IWebDriver driver;
 
-        public ResultList(IWebDriver driver)
+        public AdvanceSearch(IWebDriver driver)
         {
             this.driver = driver;
         }

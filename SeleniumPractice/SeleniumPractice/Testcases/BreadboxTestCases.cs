@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumPractice.Common;
-using SeleniumPractice.PageObject;
+using SeleniumPractice.Action.Common;
+using SeleniumPractice.Action.PageObject;
 
 using OpenQA.Selenium;
 

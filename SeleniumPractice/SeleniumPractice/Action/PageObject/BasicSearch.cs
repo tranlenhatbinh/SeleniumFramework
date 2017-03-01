@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeleniumPractice.Common;
-using SeleniumPractice.PageObject;
+using SeleniumPractice.Action.Common;
+using SeleniumPractice.Action.PageObject;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
-namespace SeleniumPractice.PageObject
+namespace SeleniumPractice.Action.PageObject
 {
     public class BasicSearch : GeneralPage
     {

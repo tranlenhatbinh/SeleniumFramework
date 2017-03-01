@@ -1,7 +1,7 @@
-﻿using SeleniumPractice.Common;
+﻿using SeleniumPractice.Action.Common;
 using OpenQA.Selenium;
 
-namespace SeleniumPractice.PageObject
+namespace SeleniumPractice.Action.PageObject
 {
     public class GeneralPage : CommonAction
     {
