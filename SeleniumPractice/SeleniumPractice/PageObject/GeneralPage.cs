@@ -8,8 +8,7 @@ using SeleniumPractice.Common;
 namespace SeleniumPractice.PageObject
 {
     public class GeneralPage : CommonAction
-    {   
-
+    {
         public void ClickSearchButton(IWebDriver driver, string locator )
         {
             ClickControl(driver, locator);

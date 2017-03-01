@@ -13,8 +13,6 @@ namespace SeleniumPractice.Common
 {
     public class CommonAction
     {
-
-        IWebDriver driver;
         // Enter, click, verifytext
         public void ClickControl(IWebDriver driver, string locator)
         {

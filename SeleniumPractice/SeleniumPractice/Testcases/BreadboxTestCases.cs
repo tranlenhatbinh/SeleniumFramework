@@ -25,11 +25,12 @@ namespace SeleniumPractice.TestCases
         public void TC2_Verify_that_Clear_All_link_removes_all_items_from_search()
         {
             basicsearch = new BasicSearch(driver);
-            basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
+            basicsearch.EnterSearchTerm(driver, "search box", TestData.searchTerm);
           //  basicsearch.ClickSearchOption(driver);
           //  basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
           //  basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
             basicsearch.ClickSearchButton(driver, "search button");
+          
         }
 
         [TestCleanup]
