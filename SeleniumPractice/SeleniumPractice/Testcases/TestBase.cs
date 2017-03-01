@@ -1,25 +1,22 @@
 ﻿using SeleniumPractice.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 
 namespace SeleniumPractice.TestCases
 {
     [TestClass]
   public class TestBase: ManageBrowser
     {
-        //IWebDriver driver;
-        ////[TestInitialize]
-        //public void TestInitialize()
-        //{
-        //    driver = OpenBrowser(driver, TestData.browser);
-        //    NavigateToEbscoPage(driver);
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            OpenBrowser(TestData.browser);
+            CommonAction.NavigateToEbscoPage();
+        }
 
-        //}
-
-        //[TestCleanup]
-        //public void Testcleanup()
-        //{
-        //    CloseBrowser(driver);
-        //}
+        [TestCleanup]
+        public void Testcleanup()
+        {
+            CloseBrowser();
+        }
     }
 }

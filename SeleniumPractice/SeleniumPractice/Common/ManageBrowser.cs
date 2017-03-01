@@ -8,7 +8,8 @@ namespace SeleniumPractice.Common
 {
     public class ManageBrowser
     {
-        public IWebDriver OpenBrowser(IWebDriver driver, string browsername)
+        public static IWebDriver driver;
+        public static void OpenBrowser(string browsername)
         {
             switch (browsername.ToUpper())
             {
@@ -29,16 +30,9 @@ namespace SeleniumPractice.Common
                     driver.Manage().Window.Maximize();
                     break;
             }
-            return driver;
         }
 
-        // move to managebrowser
-        public static void NavigateToEbscoPage(IWebDriver driver)
-        {
-            driver.Navigate().GoToUrl(TestData.ebscodURL);
-        }
-
-        public static void CloseBrowser(IWebDriver driver)
+        public static void CloseBrowser()
         {
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Quit();
@@ -48,6 +42,7 @@ namespace SeleniumPractice.Common
             }
 
         }
+
 
     }
 }
