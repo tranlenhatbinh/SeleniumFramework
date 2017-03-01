@@ -13,8 +13,8 @@ namespace SeleniumPractice.TestCases
     {
 
         IWebDriver driver;
-        private BasicSearch basicSearch;
-        private ResultList resultList;
+        private BasicSearchPage basicSearch;
+        private ResultListPage resultList;
 
         [TestInitialize]
         public void TestInitialize()
@@ -27,10 +27,10 @@ namespace SeleniumPractice.TestCases
         public void TC01_Folder()
         {
             // 1. Conduct a Search term on basic search textbox
-            basicSearch = new BasicSearch(driver);
+            basicSearch = new BasicSearchPage(driver);
             basicSearch.ConductSearch(driver, TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
-            resultList = new ResultList(driver);
+            resultList = new ResultListPage(driver);
         }
 
         [TestCleanup]
