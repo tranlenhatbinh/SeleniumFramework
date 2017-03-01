@@ -1,3 +1,37 @@
-﻿{
+﻿[
+  {
+    "controlName": "Search box1",
+    "type": "id",
+    "value": "Searchbox1"
+  },
 
-}
+  {
+    "controlName": "Search box2",
+    "type": "id",
+    "value": "Searchbox2"
+  },
+
+  {
+    "controlName": "Search box3",
+    "type": "id",
+    "value": "Searchbox3"
+  },
+
+  {
+    "controlName": "Operator dropdown1",
+    "type": "xpath",
+    "value": "//ul[@id='guidedfindfieldRows']/li[2]/div[1]/button"
+  },
+
+  {
+    "controlName": "Operator dropdown2",
+    "type": "xpath",
+    "value": "//ul[@id='guidedfindfieldRows']/li[3]/div[1]/button"
+  },
+  
+  {
+    "controlName": "Search button",
+    "type": "id",
+    "value": "SearchButton"
+  }
+]

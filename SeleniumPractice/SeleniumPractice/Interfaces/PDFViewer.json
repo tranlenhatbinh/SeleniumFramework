@@ -1,3 +1,13 @@
-﻿{
-  //Capture PDFViewer page
-}
+﻿[
+  {
+    "controlName": "email link",
+    "type": "xpath",
+    "value": "//div[@id='column2']//li/a[.='E-mail']"
+  },
+
+  {
+    "controlName": "x button",
+    "type": "xpath",
+    "value": "//div[@id='ToolPanelContent']/a"
+  }
+]

@@ -61,43 +61,41 @@ namespace SeleniumPractice.PageObject
         ///<summary>
         /// Method to find a web element
         ///</summary>
-        public IWebElement FindWebElement(string locator)
+        public IWebElement FindWebElement(IWebDriver driver, string locator)
         {
             string[] control = GetControlValue(locator);
             switch (control[0].ToUpper())
             {
                 case "ID":
-                    return ManageBrowser.driver.FindElement(By.Id(control[1]));
+                    return driver.FindElement(By.Id(control[1]));
                 case "NAME":
-                    return ManageBrowser.driver.FindElement(By.Name(control[1]));
+                    return driver.FindElement(By.Name(control[1]));
                 case "CLASSNAME":
-                    return ManageBrowser.driver.FindElement(By.ClassName(control[1]));
+                    return driver.FindElement(By.ClassName(control[1]));
                 default:
-                    return ManageBrowser.driver.FindElement(By.XPath(control[1]));
+                    return driver.FindElement(By.XPath(control[1]));
             }
         }
 
-        public void ClickControl(string locator)
+        public void ClickControl(IWebDriver driver, string locator)
         {
-            FindWebElement(locator).Click();
-        }
-        public void EnterValue(string locator, string value)
-        {
-            FindWebElement(locator).Clear();
-            FindWebElement(locator).SendKeys(value);
+            FindWebElement(driver, locator).Click();
         }
 
-        public void TickCheckbox(string locator)
+        public void EnterValue(IWebDriver driver, string locator, string value)
         {
-            if (FindWebElement(locator).Selected == false)
+            FindWebElement(driver, locator).Clear();
+            FindWebElement(driver, locator).SendKeys(value);
+        }
+
+        public void TickCheckbox(IWebDriver driver, string locator)
+        {
+            if (FindWebElement(driver, locator).Selected == false)
             {
                
-                FindWebElement(locator).Click();
+                FindWebElement(driver, locator).Click();
             }
         }
-
-     
-
 
     }
 }

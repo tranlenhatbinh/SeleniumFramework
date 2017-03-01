@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
 
 namespace SeleniumPractice.PageObject
 {
-public class ResultList:GeneralPage
+public class ResultList
     {
-        public void goToContentProvider()
+        IWebDriver driver;
+
+        public ResultList (IWebDriver driver)
         {
-            ClickControl("Contain Provider cluster");
-            ClickControl("Show More Contain Provider cluster");
+            this.driver = driver;
         }
     }
 }
