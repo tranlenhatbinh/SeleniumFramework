@@ -20,7 +20,6 @@ namespace SeleniumPractice.TestCases
         public void TestInitialize()
         {
             driver = OpenBrowser(driver, TestData.browser);
-
             NavigateToEbscoPage(driver);
         }
 

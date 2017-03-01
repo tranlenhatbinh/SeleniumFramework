@@ -8,7 +8,7 @@ namespace SeleniumPractice.TestCases
   public class TestBase: ManageBrowser
     {
        IWebDriver driver;
-
+        //
         //public static IWebDriver getdriver()
         //{
         //    return driver = OpenBrowser(driver, TestData.browser);
