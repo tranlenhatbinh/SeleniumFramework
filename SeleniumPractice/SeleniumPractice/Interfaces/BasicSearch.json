@@ -18,15 +18,27 @@
   },
 
   {
-    "controlNam": "Peer Reviewed limiter",
+    "controlName": "Peer Reviewed limiter",
     "type": "id",
     "value": "common_RV"
   },
 
   {
-    "control": "Apply related words expander",
+    "controlName": "Full Text limiter",
+    "type": "id",
+    "value": "common_FT"
+  },
+
+  {
+    "controlName": "Apply related words expander",
     "type": "id",
     "value": "expand_thesaurus"
+  },
+   
+   {
+     "controlName":"Advance Search",
+     "type":"id",
+     "value":"advanced"
   }
   
   
