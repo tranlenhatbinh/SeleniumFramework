@@ -11,7 +11,7 @@ using OpenQA.Selenium.Interactions;
 namespace SeleniumPractice.PageObject
 {
     public class BasicSearch : GeneralPage
-    {
+    {   //
         IWebDriver driver;
 
         public BasicSearch(IWebDriver driver)
