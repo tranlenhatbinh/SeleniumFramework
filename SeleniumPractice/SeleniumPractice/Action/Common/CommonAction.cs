@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Web.Script.Serialization;
-using SeleniumPractice.Common;
 
-namespace SeleniumPractice.PageObject
+namespace SeleniumPractice.Action.Common
 {
-    public class GeneralPage : CommonAction
+    public class CommonAction
     {
-        ///<summary>
+          ///<summary>
         /// Method to get the class name from a method
         ///</summary>
         public static string GetClassCaller(int level = 4)
@@ -37,6 +36,9 @@ namespace SeleniumPractice.PageObject
             {
                 case "BasicSearch":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
+                    break;
+                case "GeneralPage":
+                    content = File.ReadAllText(path + @"\Interfaces\GeneralPage.json");
                     break;
                 default:
                     break;
@@ -93,6 +95,6 @@ namespace SeleniumPractice.PageObject
                 FindWebElement(driver, locator).Click();
             }
         }
-
+ 
     }
 }

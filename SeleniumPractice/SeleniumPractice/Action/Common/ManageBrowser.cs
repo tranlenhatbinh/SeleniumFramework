@@ -4,7 +4,7 @@ using OpenQA.Selenium.IE;
 using System.Diagnostics;
 using OpenQA.Selenium;
 
-namespace SeleniumPractice.Common
+namespace SeleniumPractice.Action.Common
 {
     public class ManageBrowser
     {

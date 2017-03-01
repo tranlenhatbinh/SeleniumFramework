@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumPractice.Common;
-using SeleniumPractice.PageObject;
+using SeleniumPractice.Action.Common;
+using SeleniumPractice.Action.PageObject;
 
 using OpenQA.Selenium;
 
@@ -28,13 +28,16 @@ namespace SeleniumPractice.TestCases
             basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
             basicsearch.ClickSearchOption(driver);
             basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
+            basicsearch.clickSearchButton(driver);
         }
 
         [TestCleanup]
         public void Testcleanup()
         {
-            /*  CloseBrowser(driver)*/
-            ;
+            //CloseBrowser(driver);
+
         }
     }
 }
