@@ -36,7 +36,7 @@ namespace SeleniumPractice.PageObject
             TickCheckbox(driver, item);
         }
 
-        public void ConductSearch(IWebDriver driver, string searchterm)
+        public void ConductSearchInBasicSearch(IWebDriver driver, string searchterm)
         {
             EnterValue(driver, "search box", searchterm);
             ClickControl(driver, "search button");

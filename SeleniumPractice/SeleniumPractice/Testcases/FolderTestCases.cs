@@ -15,7 +15,7 @@ namespace SeleniumPractice.TestCases
         IWebDriver driver;
         private BasicSearch basicSearch;
         private ResultList resultList;
-
+        
         [TestInitialize]
         public void TestInitialize()
         {
@@ -24,11 +24,11 @@ namespace SeleniumPractice.TestCases
         }
 
         [TestMethod]
-        public void TC01_Folder()
+        public void TC01_Verify_that_user_is_able_to_delete_fulltext_records_from_folder()
         {
             // 1. Conduct a Search term on basic search textbox
             basicSearch = new BasicSearch(driver);
-            basicSearch.ConductSearch(driver, TestData.searchTerm);
+            basicSearch.ConductSearchInBasicSearch(driver, TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
             resultList = new ResultList(driver);
         }
