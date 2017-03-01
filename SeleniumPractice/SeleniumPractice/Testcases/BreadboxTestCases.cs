@@ -27,7 +27,10 @@ namespace SeleniumPractice.TestCases
             basicsearch = new BasicSearch(driver);
             basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
             basicsearch.ClickSearchOption(driver);
-            basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+            basicsearch.SelectItemInSearchOption(driver, "full text limiter");
+            basicsearch.SelectItemInSearchOption(driver, "peer reviewed limiter");
+            basicsearch.SelectItemInSearchOption(driver, "apply related words expander");
+            basicsearch.clickSearchButton(driver);
         }
 
         [TestCleanup]
