@@ -7,11 +7,11 @@ using OpenQA.Selenium;
 
 namespace SeleniumPractice.Action.PageObject
 {
-    public class ResultList: GeneralPage
+    public class ResultListPage: GeneralPage
     {   //
         IWebDriver driver;
 
-        public ResultList(IWebDriver driver)
+        public ResultListPage(IWebDriver driver)
         {
             this.driver = driver;
         }

@@ -10,11 +10,11 @@ using OpenQA.Selenium.Interactions;
 
 namespace SeleniumPractice.Action.PageObject
 {
-    public class BasicSearch : GeneralPage
+    public class BasicSearchPage : GeneralPage
     {   //
         IWebDriver driver;
 
-        public BasicSearch(IWebDriver driver)
+        public BasicSearchPage(IWebDriver driver)
         {
             this.driver = driver;
         }
