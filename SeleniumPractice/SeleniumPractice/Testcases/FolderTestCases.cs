@@ -24,7 +24,7 @@ namespace SeleniumPractice.TestCases
         }
 
         [TestMethod]
-        public void TC01_Folder()
+        public void TC01_Verify_that_user_is_able_to_delete_fulltext_records_from_folder()
         {
             // 1. Conduct a Search term on basic search textbox
             basicSearch = new BasicSearchPage(driver);
