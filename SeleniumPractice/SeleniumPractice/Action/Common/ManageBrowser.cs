@@ -65,7 +65,6 @@ namespace SeleniumPractice.Action.Common
             caps.SetCapability(CapabilityType.Platform, platform);
             caps.SetCapability("username", ConfigurationManager.AppSettings["usernameSauceLabs"]);
             caps.SetCapability("accessKey", ConfigurationManager.AppSettings["accessKeySauceLabs"]);
-           // caps.SetCapability("name", TestContext.CurrentContext.Test.Name);
             return new RemoteWebDriver(uri, caps, TimeSpan.FromSeconds(600));
         }
 
