@@ -6,7 +6,6 @@ using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Remote;
 using System.Configuration;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.Action.Common
 {
@@ -45,6 +44,12 @@ namespace SeleniumPractice.Action.Common
                         break;
                     case "CHROME":
                         driver = driverRunOnSauceLabs("Chrome", TestData.ChromeVersion, TestData.chromePlatform);
+                        break;
+                    case "IE":
+                        driver = driverRunOnSauceLabs("Internet Explorer", TestData.IEVersion, TestData.iePlatform);
+                        break;
+                    default:
+                        driver = driverRunOnSauceLabs("firefox", TestData.FirefoxVersion, TestData.firefoxPlatform);
                         break;
                 }
             }
