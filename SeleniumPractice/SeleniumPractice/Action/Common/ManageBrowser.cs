@@ -10,24 +10,31 @@ namespace SeleniumPractice.Action.Common
     {
         public IWebDriver OpenBrowser(IWebDriver driver, string browsername)
         {
-            switch (browsername.ToUpper())
+            if (TestData.runtype.ToUpper() == "LOCAL")
             {
-                case "CHROME":
-                    driver = new ChromeDriver();
-                    driver.Manage().Window.Maximize();
-                    break;
-                case "IE":
-                    driver = new InternetExplorerDriver();
-                    driver.Manage().Window.Maximize();
-                    break;
-                case "FIREFOX":
-                    driver = new FirefoxDriver();
-                    driver.Manage().Window.Maximize();
-                    break;
-                default:
-                    driver = new FirefoxDriver();
-                    driver.Manage().Window.Maximize();
-                    break;
+                switch (browsername.ToUpper())
+                {
+                    case "CHROME":
+                        driver = new ChromeDriver();
+                        driver.Manage().Window.Maximize();
+                        break;
+                    case "IE":
+                        driver = new InternetExplorerDriver();
+                        driver.Manage().Window.Maximize();
+                        break;
+                    case "FIREFOX":
+                        driver = new FirefoxDriver();
+                        driver.Manage().Window.Maximize();
+                        break;
+                    default:
+                        driver = new FirefoxDriver();
+                        driver.Manage().Window.Maximize();
+                        break;
+                }
+            } 
+            else if (TestData.runtype.ToUpper() == "SAUCELAB")
+            {
+                //
             }
             return driver;
         }
