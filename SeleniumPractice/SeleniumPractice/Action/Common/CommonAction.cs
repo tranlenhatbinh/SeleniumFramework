@@ -34,7 +34,7 @@ namespace SeleniumPractice.Action.Common
             string content = string.Empty;
             switch (page)
             {
-                case "BasicSearch":
+                case "BasicSearchPage":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
                     break;
                 case "GeneralPage":
