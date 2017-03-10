@@ -43,6 +43,9 @@ namespace SeleniumPractice.Action.Common
                     case "FIREFOX":
                         driver = driverRunOnSauceLabs("firefox", TestData.FirefoxVersion, TestData.firefoxPlatform);
                         break;
+                    case "CHROME":
+                        driver = driverRunOnSauceLabs("Chrome", TestData.ChromeVersion, TestData.chromePlatform);
+                        break;
                 }
             }
             return driver;
