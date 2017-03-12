@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using System;
 using OpenQA.Selenium.Remote;
 using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumPractice.Action.Common
 {
@@ -55,9 +56,9 @@ namespace SeleniumPractice.Action.Common
             }
             return driver;
         }
-
-        private static IWebDriver driverRunOnSauceLabs(string browser, string version, string platform)
-        {
+        public  TestContext TestContext { get; set; }
+        private  IWebDriver driverRunOnSauceLabs(string browser, string version, string platform)
+        {  
             var uri = new Uri("http://ondemand.saucelabs.com:80/wd/hub");
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.SetCapability(CapabilityType.BrowserName, browser);
@@ -65,6 +66,7 @@ namespace SeleniumPractice.Action.Common
             caps.SetCapability(CapabilityType.Platform, platform);
             caps.SetCapability("username", ConfigurationManager.AppSettings["usernameSauceLabs"]);
             caps.SetCapability("accessKey", ConfigurationManager.AppSettings["accessKeySauceLabs"]);
+            caps.SetCapability("name", TestContext.TestName);
             return new RemoteWebDriver(uri, caps, TimeSpan.FromSeconds(600));
         }
 
