@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumPractice.Common;
-using SeleniumPractice.PageObject;
+using SeleniumPractice.Action.Common;
+using SeleniumPractice.Action.PageObject;
 
 using OpenQA.Selenium;
 
@@ -11,7 +11,7 @@ namespace SeleniumPractice.TestCases
     public class BreadboxTestCases : ManageBrowser
     {
         IWebDriver driver;
-        private BasicSearch basicsearch;
+        private BasicSearchPage basicsearch;
 
 
         [TestInitialize]
@@ -24,13 +24,13 @@ namespace SeleniumPractice.TestCases
         [TestMethod]
         public void TC2_Verify_that_Clear_All_link_removes_all_items_from_search()
         {
-            basicsearch = new BasicSearch(driver);
-            basicsearch.EnterSearchTerm(driver, "search box", TestData.searchTerm);
-          //  basicsearch.ClickSearchOption(driver);
-          //  basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
-          //  basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
-            basicsearch.ClickSearchButton(driver, "search button");
-          
+            basicsearch = new BasicSearchPage(driver);
+            basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
+            basicsearch.ClickSearchOption(driver);
+            basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
+            basicsearch.clickSearchButton(driver);
         }
 
         [TestCleanup]

@@ -1,25 +1,14 @@
-﻿using System;
+﻿using OpenQA.Selenium;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 using System.Diagnostics;
 using System.IO;
 using System.Web.Script.Serialization;
 
-namespace SeleniumPractice.Common
+namespace SeleniumPractice.Action.Common
 {
     public class CommonAction
     {
-        // Enter, click, verifytext
-        public void ClickControl(IWebDriver driver, string locator)
-        {
-            FindWebElement(driver, locator).Click();
-        }
-
-        ///<summary>
+          ///<summary>
         /// Method to get the class name from a method
         ///</summary>
         public static string GetClassCaller(int level = 4)
@@ -36,6 +25,7 @@ namespace SeleniumPractice.Common
             public string value { get; set; }
         }
 
+
         public string[] GetControlValue(string namecontrol)
         {
             string page = GetClassCaller();
@@ -44,8 +34,11 @@ namespace SeleniumPractice.Common
             string content = string.Empty;
             switch (page)
             {
-                case "BasicSearch":
+                case "BasicSearchPage":
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
+                    break;
+                case "GeneralPage":
+                    content = File.ReadAllText(path + @"\Interfaces\GeneralPage.json");
                     break;
                 default:
                     break;
@@ -83,6 +76,11 @@ namespace SeleniumPractice.Common
             }
         }
 
+        public void ClickControl(IWebDriver driver, string locator)
+        {
+            FindWebElement(driver, locator).Click();
+        }
+
         public void EnterValue(IWebDriver driver, string locator, string value)
         {
             FindWebElement(driver, locator).Clear();
@@ -97,5 +95,6 @@ namespace SeleniumPractice.Common
                 FindWebElement(driver, locator).Click();
             }
         }
+ 
     }
 }
