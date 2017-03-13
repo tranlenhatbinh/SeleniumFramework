@@ -1,8 +1,8 @@
 [
   {
-    "controlName": "fulltext limiter",
+    "controlName": "Fulltext limiter",
     "type": "id",
-    "value": "SearchTerm1"
+    "value": "common_FT"
   },
 
   {
@@ -12,7 +12,7 @@
   },
 
   {
-    "control": " Show More Contain Provider cluster",
+    "controlName": "Show More Contain Provider cluster",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilterContent']//a[@title='Show More']"
   },
@@ -27,7 +27,20 @@
     "controlName": "English Language cluster",
     "type": "id",
     "value": "_cluster_Language%24english"
+  },
+
+  {
+    "controlName": "Business Source Complete cluster",
+    "type": "id",
+    "value": "modal__db_filter_bth"
+  },
+
+  {
+    "controlName": "Update button",
+    "type": "xpath",
+    "value": "//div[@id='multiSelectDbFilter']//input[@value='Update']"
   }
 
-  
+
+
 ]

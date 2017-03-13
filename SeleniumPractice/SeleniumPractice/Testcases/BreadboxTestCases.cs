@@ -30,7 +30,7 @@ namespace SeleniumPractice.TestCases
             basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
             basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
             basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
-            basicsearch.clickSearchButton(driver);
+          //  basicsearch.clickSearchButton(driver);
         }
 
         [TestCleanup]

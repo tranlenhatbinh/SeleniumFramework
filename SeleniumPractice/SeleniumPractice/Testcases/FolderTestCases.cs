@@ -30,12 +30,18 @@ namespace SeleniumPractice.TestCases
             basicSearch = new BasicSearchPage(driver);
             basicSearch.ConductSearch(driver, TestData.searchTerm);            
             resultList = new ResultListPage(driver);
+            resultList.clikcItem(driver, "Fulltext limiter");
+            resultList.clikcItem(driver, "Contain Provider cluster");
+            resultList.clikcItem(driver, "Show More Contain Provider cluster");
+            Thread.Sleep(1000);
+            resultList.clikcItem(driver, "Business Source Complete cluster");
+            resultList.clikcItem(driver, "Update button");
         }
 
-        [TestCleanup]
-        public void Testcleanup()
-        {
-            CloseBrowser(driver);
-        }
+       // [TestCleanup]
+        //public void Testcleanup()
+       // {
+        //    CloseBrowser(driver);
+        //}
     }
 }

@@ -16,9 +16,21 @@ namespace SeleniumPractice.Action.PageObject
             this.driver = driver;
         }
 
-        public void SelectLimiterCheckBox(IWebDriver driver)
+        public void selectItemCheckBox(IWebDriver driver, string item)
         {
-            TickCheckbox(driver, "fulltext limiter");
+            TickCheckbox(driver, item);
         }
+
+        ////update
+
+        public void expandItemInResultList(IWebDriver driver, string showmorelink)
+        {
+            ClickControl(driver, showmorelink);
+        }
+
+
+
+
+
     }
 }

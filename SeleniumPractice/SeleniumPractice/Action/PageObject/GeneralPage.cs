@@ -6,9 +6,16 @@ namespace SeleniumPractice.Action.PageObject
     public class GeneralPage : CommonAction
     {
 
-        public void clickSearchButton(IWebDriver driver)
+       // public void clickSearchButton(IWebDriver driver)
+      //  {
+      //      ClickControl(driver, "search button");
+      //  }
+
+       // thi update
+        public void clikcItem(IWebDriver driver, string item)
         {
-            ClickControl(driver, "search button");
+            ClickControl(driver, item);
+
         }
 
     }

@@ -3,7 +3,16 @@
     "controlName": "search button",
     "type": "id",
     "value": "SearchButton"
+  },
+  {
+    "controlName": "Update button",
+    "type": "xpath",
+    "value": "//div[@id='multiSelectDbFilter']//input[@value='Update']"
   }
+
+
+ 
+
  
 ]
 
