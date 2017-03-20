@@ -1,5 +1,6 @@
 ﻿using SeleniumPractice.Action.Common;
 using OpenQA.Selenium;
+using System;
 
 namespace SeleniumPractice.Action.PageObject
 {
@@ -16,6 +17,18 @@ namespace SeleniumPractice.Action.PageObject
             FindWebElement(driver, locator).Click();
         }
 
+        public bool DoesElementPresent(IWebDriver driver,string locator)
+        {
+            try
+            {
+                return FindWebElement(driver,locator).Displayed;
+            }
 
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using SeleniumPractice.Action.Common;
 
 namespace SeleniumPractice.Action.PageObject
 {
@@ -18,6 +14,16 @@ namespace SeleniumPractice.Action.PageObject
 
         public void selectClusters(IWebDriver driver, string locator)
         {
+            //if(DoesElementPresent(driver,locator))
+            //{
+            //    selectCluster(driver, locator);
+            //}
+            //else
+            //{
+            //    string cluster = "//a[@id='multiSelectDocTypeTrigger']";
+            //    driver.FindElement(By.XPath(cluster)).Click();
+            //    selectCluster(driver, locator);
+            //}
             selectCluster(driver, locator);
         }
     }

@@ -39,8 +39,9 @@ namespace SeleniumPractice.TestCases
             basicsearch = new BasicSearchPage(driver);
             basicsearch.ConductSearch(driver, TestData.searchTerm);
             resultlist = new ResultListPage(driver);
-            //  resultlist.selectItemCluster(driver, "//a[@id='multiSelectDocTypeTrigger']/../div/ul/li/label/a[.='Academic Journals']");
-            resultlist.selectClusters(driver, "Contain Provider cluster");
+            // resultlist.selectCluster(driver, "//a[@id='multiSelectDocTypeTrigger']/../div//a[.='News']");
+            resultlist.selectClusters(driver, "Source Type cluster");
+
         }
 
         [TestCleanup]
