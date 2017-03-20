@@ -13,7 +13,6 @@ namespace SeleniumPractice.TestCases
         private BasicSearchPage basicsearch;
         private ResultListPage resultlist;
 
-
         [TestInitialize]
         public void TestInitialize()
         {
