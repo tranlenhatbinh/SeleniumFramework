@@ -41,8 +41,7 @@ namespace SeleniumPractice.TestCases
             resultlist = new ResultListPage(driver);
             // resultlist.selectCluster(driver, "//a[@id='multiSelectDocTypeTrigger']/../div//a[.='News']");
           //  resultlist.selectClusters(driver, "Source Type cluster", "Academic Journal source type");
-
-            resultlist.selectShowMore(driver, "Contain Provider cluster");
+            resultlist.selectShowMore(driver, "Language cluster");
 
         }
 

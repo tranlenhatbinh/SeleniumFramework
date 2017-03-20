@@ -33,6 +33,11 @@
     "controlName": "English Language cluster",
     "type": "id",
     "value": "_cluster_Language%24english"
+  },
+  {
+    "controlName": "Language cluster",
+    "type": "id",
+    "value": "multiSelectCluster_LanguageTrigger"
   }
 
   
