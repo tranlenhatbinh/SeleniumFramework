@@ -32,7 +32,6 @@ namespace SeleniumPractice.Action.PageObject
 
         public void SelectItemInSearchOption(IWebDriver driver, string item)
         {
-            //
             TickCheckbox(driver, item);
         }
 
@@ -41,7 +40,7 @@ namespace SeleniumPractice.Action.PageObject
             EnterValue(driver, "search box", searchterm);
             ClickControl(driver, "search button");
         }
+        
 
-       
     }
 }

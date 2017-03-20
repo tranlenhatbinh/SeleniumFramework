@@ -40,6 +40,9 @@ namespace SeleniumPractice.Action.Common
                 case "GeneralPage":
                     content = File.ReadAllText(path + @"\Interfaces\GeneralPage.json");
                     break;
+                case "ResultListPage":
+                    content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
+                    break;
                 default:
                     break;
             }
@@ -95,6 +98,8 @@ namespace SeleniumPractice.Action.Common
                 FindWebElement(driver, locator).Click();
             }
         }
- 
+
+       
+
     }
 }

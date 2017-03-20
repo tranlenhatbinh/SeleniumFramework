@@ -11,5 +11,11 @@ namespace SeleniumPractice.Action.PageObject
             ClickControl(driver, "search button");
         }
 
+        public void selectCluster(IWebDriver driver, string locator)
+        {
+            FindWebElement(driver, locator).Click();
+        }
+
+
     }
 }
