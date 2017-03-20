@@ -18,14 +18,14 @@
   },
 
   {
-    "control": " Show More Contain Provider cluster",
+    "controlName": " Show More Contain Provider cluster",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilterContent']//a[@title='Show More']"
   },
 
   {
     "controlName": "Academic Journal source type",
-    "type": "xpath",
+    "type": "id",
     "value": "_doc_type_160MN"
   },
 

@@ -18,6 +18,8 @@ namespace SeleniumPractice.Action.Common
             return classname;
         }
 
+
+        public static string a = GetClassCaller();
         public class control
         {
             public string controlName { get; set; }
@@ -44,6 +46,7 @@ namespace SeleniumPractice.Action.Common
                     content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
                     break;
                 default:
+                    content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
                     break;
             }
             var result = new JavaScriptSerializer().Deserialize<List<control>>(content);
@@ -57,9 +60,9 @@ namespace SeleniumPractice.Action.Common
                     return control;
                 }
             }
-            return null;
+            return control;
         }
-
+        
         ///<summary>
         /// Method to find a web element
         ///</summary>
