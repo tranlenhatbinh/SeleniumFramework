@@ -12,20 +12,20 @@ namespace SeleniumPractice.TestCases
     {
         IWebDriver driver;
         private BasicSearchPage basicsearch;
-
+        private ResultListPage resultlist;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            driver = OpenBrowser(driver, TestData.browser);
-            NavigateToEbscoPage(driver);
+            driver = openBrowser(driver, TestData.browser);
+            navigateToEbscoPage(driver);
         }
 
         [TestMethod]
         public void TC2_Verify_that_Clear_All_link_removes_all_items_from_search()
         {
-            basicsearch = new BasicSearch(driver);
-            resultlist = new ResultList(driver);
+            basicsearch = new BasicSearchPage(driver);
+            resultlist = new ResultListPage(driver);
             basicsearch.enterSearchTerm(driver, TestData.searchTerm);
             basicsearch.clickItem(driver, "search options");
             basicsearch.selectItemInSearchOption(driver, "Full Text limiter");
@@ -41,7 +41,7 @@ namespace SeleniumPractice.TestCases
         [TestCleanup]
         public void Testcleanup()
         {
-            CloseBrowser(driver);
+            closeBrowser(driver);
 
         }
     }
