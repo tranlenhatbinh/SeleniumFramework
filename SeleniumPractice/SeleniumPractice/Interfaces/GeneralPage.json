@@ -29,10 +29,16 @@
     "value": "multiSelectDbFilterTrigger"
   },
 
-    {
+  {
     "controlName": "language cluster",
     "type": "id",
     "value": "multiSelectCluster_LanguageTrigger"
+  },
+  {
+    "controlName": "limit to",
+    "type": "id",
+    "value": "resultsLimiterTrigger"
   }
+
 ]
 

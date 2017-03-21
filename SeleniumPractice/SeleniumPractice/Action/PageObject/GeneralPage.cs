@@ -17,7 +17,7 @@ namespace SeleniumPractice.Action.PageObject
             string id = getAttributeControl(driver, sourceTypeOrCluster);
 
             string showmorexpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='Show More']", id);
-            string itemxpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='{1}'])]", id, item);
+            string itemxpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='{1}']", id, item);
 
             if (doesElementPresentXpath(driver, itemxpath))
             {
