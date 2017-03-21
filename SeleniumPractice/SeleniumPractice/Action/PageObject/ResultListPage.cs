@@ -3,7 +3,7 @@ using SeleniumPractice.Action.Common;
 
 namespace SeleniumPractice.Action.PageObject
 {
-    public class ResultListPage:GeneralPage
+    public class ResultListPage : GeneralPage
     {
         IWebDriver driver;
 
