@@ -1,15 +1,7 @@
 [
-  {
-    "controlName": "Fulltext limiter",
-    "type": "id",
-    "value": "common_FT"
-  },
+ 
 
-  {
-    "controlName": "Contain Provider cluster",
-    "type": "id",
-    "value": "multiSelectDbFilterTrigger"
-  },
+  
 
   {
     "controlName": "Show More Contain Provider cluster",

@@ -26,22 +26,23 @@ namespace SeleniumPractice.TestCases
         [TestMethod]
         public void TC01_Verify_that_user_is_able_to_delete_fulltext_records_from_folder()
         {
-          
-            basicSearch = new BasicSearchPage(driver);
-            basicSearch.ConductSearch(driver, TestData.searchTerm);            
-            resultList = new ResultListPage(driver);
-            resultList.clikcItem(driver, "Fulltext limiter");
-            resultList.clikcItem(driver, "Contain Provider cluster");
-            resultList.clikcItem(driver, "Show More Contain Provider cluster");
-            Thread.Sleep(1000);
-            resultList.clikcItem(driver, "Business Source Complete cluster");
-            resultList.clikcItem(driver, "Update button");
-        }
 
-       // [TestCleanup]
-        //public void Testcleanup()
-       // {
-        //    CloseBrowser(driver);
-        //}
-    }
+            basicSearch = new BasicSearchPage(driver);
+            basicSearch.ConductSearch(driver, TestData.searchTerm);
+            resultList = new ResultListPage(driver);
+            resultList.clickItem(driver, "Fulltext limiter");
+            //    resultList.clickItem(driver, "Contain Provider cluster");
+            //    resultList.clickItem(driver, "Show More Contain Provider cluster");
+            //    Thread.Sleep(1000);
+            //    resultList.clickItem(driver, "Business Source Complete cluster");
+            //    resultList.clickItem(driver, "Update button");
+            //}
+
+            // [TestCleanup]
+            //public void Testcleanup()
+            // {
+            //    CloseBrowser(driver);
+            //}
+        } 
+        }
 }

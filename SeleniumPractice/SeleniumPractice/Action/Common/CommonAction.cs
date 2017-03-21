@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -37,11 +38,11 @@ namespace SeleniumPractice.Action.Common
                 case "BasicSearchPage":                     
                     content = File.ReadAllText(path + @"\Interfaces\BasicSearch.json");
                     break;
-               // case "GeneralPage":
-                //    content = File.ReadAllText(path + @"\Interfaces\GeneralPage.json");
-                //    break;
-                case "ResultListPage":
                 case "GeneralPage":
+                    content = File.ReadAllText(path + @"\Interfaces\GeneralPage.json");
+                    break;
+                case "ResultListPage":
+               
                     content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
                     break;
                 default:
@@ -99,6 +100,31 @@ namespace SeleniumPractice.Action.Common
                 FindWebElement(driver, locator).Click();
             }
         }
- 
+
+
+        //GetAttribute
+        public string GetAttributeID(IWebDriver driver, string locator)
+        {
+           return FindWebElement(driver, locator).GetAttribute("id");
+        }
+
+
+
+
+        //Check control exit
+        public bool DoesElementPresent(IWebDriver driver, string locator)
+        {
+            try
+            {
+                return FindWebElement(driver, locator).Displayed;
+            }
+
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
     }
 }

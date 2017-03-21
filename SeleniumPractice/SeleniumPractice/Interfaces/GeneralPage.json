@@ -8,6 +8,24 @@
     "controlName": "Update button",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilter']//input[@value='Update']"
+  },
+
+  {
+    "controlName": "Advance Search",
+    "type": "id",
+    "value": "advanced"
+  },
+
+  {
+    "controlName": "Fulltext limiter",
+    "type": "id",
+    "value": "common_FT"
+  },
+
+  {
+    "controlName": "Contain Provider cluster",
+    "type": "id",
+    "value": "multiSelectDbFilterTrigger"
   }
 
 
