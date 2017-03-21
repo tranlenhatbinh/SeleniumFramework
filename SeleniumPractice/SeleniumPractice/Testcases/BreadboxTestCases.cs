@@ -11,37 +11,32 @@ namespace SeleniumPractice.TestCases
     public class BreadboxTestCases : ManageBrowser
     {
         IWebDriver driver;
-        private BasicSearch basicsearch;
-        private ResultList resultlist;
+        private BasicSearchPage basicsearch;
 
 
         [TestInitialize]
         public void TestInitialize()
         {
-            driver = openBrowser(driver, TestData.browser);
-            navigateToEbscoPage(driver);
+            driver = OpenBrowser(driver, TestData.browser);
+            NavigateToEbscoPage(driver);
         }
 
         [TestMethod]
         public void TC2_Verify_that_Clear_All_link_removes_all_items_from_search()
         {
-            basicsearch = new BasicSearch(driver);
-            resultlist = new ResultList(driver);
-            basicsearch.enterSearchTerm(driver, TestData.searchTerm);
-            basicsearch.clickItem(driver, "search options");
-            basicsearch.selectItemInSearchOption(driver, "Full Text limiter");
-            basicsearch.selectItemInSearchOption(driver, "Peer Reviewed limiter");
-            basicsearch.selectItemInSearchOption(driver, "Apply related words expander");
-            basicsearch.clickItem(driver, "search button");
-            resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "pediatrics", "Update");
-            resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
-            resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
+            basicsearch = new BasicSearchPage(driver);
+            basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
+            basicsearch.ClickSearchOption(driver);
+            basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
+            basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
+            basicsearch.clickSearchButton(driver);
         }
 
         [TestCleanup]
         public void Testcleanup()
         {
-            //CloseBrowser(driver);
+            CloseBrowser(driver);
 
         }
     }
