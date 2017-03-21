@@ -26,7 +26,7 @@ namespace SeleniumPractice.Action.PageObject
             {
                 sleep(1);
 
-                clickControlXpath(driver, sourceTypeOrCluster);
+                clickControl(driver, sourceTypeOrCluster);
 
                 if (doesElementPresentXpath(driver, itemxpath))
                 {
