@@ -41,9 +41,6 @@ namespace SeleniumPractice.Action.PageObject
             }
         }
 
-        public void getvalue(IWebDriver driver, string locator)
-        {
-            FindWebElement(driver, locator);
-        }
+      
     }
 }
