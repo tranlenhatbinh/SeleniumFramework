@@ -46,7 +46,6 @@ namespace SeleniumPractice.Action.Common
                     content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
                     break;
                 default:
-                    content = File.ReadAllText(path + @"\Interfaces\ResultList.json");
                     break;
             }
             var result = new JavaScriptSerializer().Deserialize<List<control>>(content);
