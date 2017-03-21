@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace SeleniumPractice.Action.PageObject
 {
-    public class ResultListPage
+    public class ResultListPage : GeneralPage
     {
         IWebDriver driver;
 
