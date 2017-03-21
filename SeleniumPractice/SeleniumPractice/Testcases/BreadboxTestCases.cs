@@ -34,18 +34,15 @@ namespace SeleniumPractice.TestCases
             resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "child development", "Update");
             resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
             resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
-           //aa
         }
 
         [TestMethod]
         public void TC3_Verify_that_clicking_Hyperlinked_items_in_the_breadbox_launches_search_for_that_term()
         {
             basicsearch = new BasicSearchPage(driver);
-            basicsearch.ConductSearch(driver, TestData.searchTerm);
+            basicsearch.conductSearch(driver, TestData.searchTerm);
             resultlist = new ResultListPage(driver);
-            // resultlist.selectCluster(driver, "//a[@id='multiSelectDocTypeTrigger']/../div//a[.='News']");
-          //  resultlist.selectClusters(driver, "Source Type cluster", "Academic Journal source type");
-            resultlist.selectShowMore(driver, "Language cluster");
+            
 
         }
 

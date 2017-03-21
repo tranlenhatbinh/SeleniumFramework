@@ -16,8 +16,8 @@ namespace SeleniumPractice.Action.PageObject
         {
             string id = getAttributeControl(driver, sourceTypeOrCluster);
 
-            string showmorexpath = "//a[@id='" + id + "']/following-sibling::div/div/a[contains(text(),'Show More')]";
-            string itemxpath = "//a[@id='" + id + "']/following-sibling::div//a[contains(text(),'" + item + "')]";
+            string showmorexpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='Show More']",id);
+            string itemxpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='{1}'])]",id,item);
 
             if (doesElementPresentXpath(driver, itemxpath))
             {
@@ -57,14 +57,14 @@ namespace SeleniumPractice.Action.PageObject
 
         public void selectCluster(IWebDriver driver, string locator)
         {
-            FindWebElement(driver, locator).Click();
+            findWebElement(driver, locator).Click();
         }
 
         public bool DoesElementPresent(IWebDriver driver,string locator)
         {
             try
             {
-                return FindWebElement(driver,locator).Displayed;
+                return findWebElement(driver,locator).Displayed;
             }
 
             catch (NoSuchElementException e)
