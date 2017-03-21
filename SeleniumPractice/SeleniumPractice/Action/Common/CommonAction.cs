@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Threading;
+using System;
 
 namespace SeleniumPractice.Action.Common
 {
@@ -12,7 +13,7 @@ namespace SeleniumPractice.Action.Common
           ///<summary>
         /// Method to get the class name from a method
         ///</summary>
-        public static string GetClassCaller(int level = 4)
+        public static string getClassCaller(int level = 4)
         {
             var m = new StackTrace().GetFrame(level).GetMethod();
             string classname = m.DeclaringType.Name;
@@ -27,9 +28,9 @@ namespace SeleniumPractice.Action.Common
         }
 
 
-        public string[] GetControlValue(string namecontrol)
+        public string[] getControlValue(string namecontrol)
         {
-            string page = GetClassCaller();
+            string page = getClassCaller();
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
             string content = string.Empty;
@@ -61,9 +62,9 @@ namespace SeleniumPractice.Action.Common
         ///<summary>
         /// Method to find a web element
         ///</summary>
-        public IWebElement FindWebElement(IWebDriver driver, string locator)
+        public IWebElement findWebElement(IWebDriver driver, string locator)
         {
-            string[] control = GetControlValue(locator);
+            string[] control = getControlValue(locator);
             switch (control[0].ToUpper())
             {
                 case "ID":
@@ -77,66 +78,115 @@ namespace SeleniumPractice.Action.Common
             }
         }
 
-        public IWebElement FindWebElementXpath(IWebDriver driver, string xpath)
+        public IWebElement findWebElementXpath(IWebDriver driver, string xpath)
         {
             return driver.FindElement(By.XPath(xpath));
         }
 
-        public void ClickControlXpath(IWebDriver driver, string xpath)
+        public void clickControlXpath(IWebDriver driver, string xpath)
         {
-            FindWebElementXpath(driver, xpath).Click();
+            findWebElementXpath(driver, xpath).Click();
         }
 
-        public void ClickControl(IWebDriver driver, string locator)
+        public void clickControl(IWebDriver driver, string locator)
         {
-            FindWebElement(driver, locator).Click();
+            findWebElement(driver, locator).Click();
         }
 
-        public void EnterValue(IWebDriver driver, string locator, string value)
+        public void enterValue(IWebDriver driver, string locator, string value)
         {
-            FindWebElement(driver, locator).Clear();
-            FindWebElement(driver, locator).SendKeys(value);
+            findWebElement(driver, locator).Clear();
+            findWebElement(driver, locator).SendKeys(value);
         }
 
-        public void TickCheckbox(IWebDriver driver, string locator)
+        public void tickCheckbox(IWebDriver driver, string locator)
         {
-            if (FindWebElement(driver, locator).Selected == false)
+            if (findWebElement(driver, locator).Selected == false)
             {
 
-                FindWebElement(driver, locator).Click();
+                findWebElement(driver, locator).Click();
             }
         }
 
-        public void TickCheckboxXpath(IWebDriver driver, string xpath)
+        public void tickCheckboxXpath(IWebDriver driver, string xpath)
         {
-            if (FindWebElementXpath(driver, xpath).Selected == false)
+            if (findWebElementXpath(driver, xpath).Selected == false)
             {
 
-                FindWebElementXpath(driver, xpath).Click();
+                findWebElementXpath(driver, xpath).Click();
             }
         }
 
-        public bool checkControlDisplay(IWebDriver driver, string locator)
+        ///<summary>
+        /// Method to check whether element presents or not
+        ///</summary>
+        public bool doesElementPresent(IWebDriver driver, string locator)
         {
-            if (FindWebElement(driver, locator).Displayed == true)
+            try
             {
-                return true;
+                return findWebElement(driver, locator).Displayed;
             }
-            else return false;
+
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public bool doesElementPresentXpath(IWebDriver driver, string xpath)
+        {
+            try
+            {
+                return findWebElementXpath(driver, xpath).Displayed;
+            }
+
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
         }
 
         public string getAttributeControl (IWebDriver driver, string locator)
         {
-            string id = FindWebElement(driver, locator).GetAttribute("id").ToString();
+            string id = findWebElement(driver, locator).GetAttribute("id").ToString();
             return id;
         }
 
         ///<summary>
         /// Method to perform sleep action in specific seconds
         ///</summary>
-        public void Sleep(int second)
+        public void sleep(int second)
         {
             Thread.Sleep(second * 1000);
+        }
+
+        /// <summary>
+        /// Method to wait for control by locator
+        /// </summary>
+        public void waitForControl(IWebDriver driver, By locator, int timeoutInSeconds)
+        {
+            IWebElement element;
+            bool check = false;
+            for (int i = 0; i < timeoutInSeconds; i++)
+            {
+                try
+                {
+                    element = driver.FindElement(locator);
+                    if (element.Displayed != check)
+                    {
+                        sleep(1);
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    sleep(1);
+                    continue;
+                }
+            }
         }
     }
 }

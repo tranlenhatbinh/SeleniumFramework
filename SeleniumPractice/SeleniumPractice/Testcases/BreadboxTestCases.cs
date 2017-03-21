@@ -18,8 +18,8 @@ namespace SeleniumPractice.TestCases
         [TestInitialize]
         public void TestInitialize()
         {
-            driver = OpenBrowser(driver, TestData.browser);
-            NavigateToEbscoPage(driver);
+            driver = openBrowser(driver, TestData.browser);
+            navigateToEbscoPage(driver);
         }
 
         [TestMethod]
@@ -27,14 +27,15 @@ namespace SeleniumPractice.TestCases
         {
             basicsearch = new BasicSearch(driver);
             resultlist = new ResultList(driver);
-            basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
-            basicsearch.ClickSearchOption(driver);
-            basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
-            basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
-            basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
-            basicsearch.clickSearchButton(driver);
-            resultlist.selectSourceType(driver, "source type", "Books", "Cancel");
-
+            basicsearch.enterSearchTerm(driver, TestData.searchTerm);
+            basicsearch.clickItem(driver, "search options");
+            basicsearch.selectItemInSearchOption(driver, "Full Text limiter");
+            basicsearch.selectItemInSearchOption(driver, "Peer Reviewed limiter");
+            basicsearch.selectItemInSearchOption(driver, "Apply related words expander");
+            basicsearch.clickItem(driver, "search button");
+            resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "pediatrics", "Update");
+            resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
+            resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
         }
 
         [TestCleanup]

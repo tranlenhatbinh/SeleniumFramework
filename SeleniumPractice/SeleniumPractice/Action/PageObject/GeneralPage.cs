@@ -6,31 +6,52 @@ namespace SeleniumPractice.Action.PageObject
     public class GeneralPage : CommonAction
     {
 
-        public void clickSearchButton(IWebDriver driver)
+        public void clickItem(IWebDriver driver, string locator)
         {
-            ClickControl(driver, "search button");
+            clickControl(driver, locator);
         }
 
-        public void selectSourceType(IWebDriver driver, string sourceType, string item, string button)
+        public void selectSourceTypeOrCluster(IWebDriver driver, string sourceTypeOrCluster, string item, string button)
         {
-            string id = getAttributeControl(driver, sourceType);
-            
-            if(checkControlDisplay(driver, sourceType) == false)
+            string id = getAttributeControl(driver, sourceTypeOrCluster);
+
+            string showmorexpath = "//a[@id='" + id + "']/following-sibling::div/div/a[contains(text(),'Show More')]";
+            string itemxpath = "//a[@id='" + id + "']/following-sibling::div//a[contains(text(),'" + item + "')]";
+
+            if (doesElementPresentXpath(driver, itemxpath))
             {
-                ClickControl(driver, sourceType);
+                tickCheckboxXpath(driver, itemxpath);
             }
-            ClickControlXpath(driver, "//a[@id='" + id + "']/following-sibling::div/div/a[contains(text(),'Show More')]");
-
-            Sleep(1);
-
-            if (item != null)
+            else
             {
-                TickCheckboxXpath(driver, "//a[contains(text(),'" + item + "')]/ancestor::td/preceding-sibling::td/input[@type='checkbox']");
+                sleep(1);
+
+                clickControlXpath(driver, sourceTypeOrCluster);
+
+                if (doesElementPresentXpath(driver, itemxpath))
+                {
+                    tickCheckboxXpath(driver, itemxpath);
+                }
+                
+                else
+                {
+                    clickControlXpath(driver, showmorexpath);
+
+                    sleep(1);
+
+                    tickCheckboxXpath(driver, "//a[contains(text(),'" + item + "')]/ancestor::td/preceding-sibling::td/input[@type='checkbox']");
+
+                    sleep(1);
+
+                    if (button!=null)
+                    {
+                        clickControlXpath(driver, "//span[@class='save-cancel-buttons']/input[@value='" + button + "']");
+                    }
+                    
+                }
+
             }
-
-            Sleep(1);
-
-           ClickControlXpath(driver, "//span[@class='save-cancel-buttons']/input[@value='"+ button +"']");
+ 
         }
 
     }

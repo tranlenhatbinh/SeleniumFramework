@@ -19,8 +19,8 @@ namespace SeleniumPractice.TestCases
         [TestInitialize]
         public void TestInitialize()
         {
-            driver = OpenBrowser(driver, TestData.browser);
-            NavigateToEbscoPage(driver);
+            driver = openBrowser(driver, TestData.browser);
+            navigateToEbscoPage(driver);
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace SeleniumPractice.TestCases
         {
             // 1. Conduct a Search term on basic search textbox
             basicSearch = new BasicSearch(driver);
-            basicSearch.ConductSearch(driver, TestData.searchTerm);
+            basicSearch.conductSearch(driver, TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
             resultList = new ResultList(driver);
         }
@@ -36,7 +36,7 @@ namespace SeleniumPractice.TestCases
         [TestCleanup]
         public void Testcleanup()
         {
-            CloseBrowser(driver);
+            closeBrowser(driver);
         }
     }
 }

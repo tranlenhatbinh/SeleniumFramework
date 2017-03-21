@@ -4,15 +4,35 @@
     "type": "id",
     "value": "SearchButton"
   },
+
   {
-  	 "controlName": "source type",
-	 "type" : "id",
-	 "value": "multiSelectDocTypeTrigger"
+    "controlName": "search options",
+    "type": "id",
+    "value": "options"
   },
+
   {
-	"controlName": "publication cluster",
-	 "type" : "id",
-	 "value": "multiSelectCluster_JournalTrigger"
+    "controlName": "source type",
+    "type": "id",
+    "value": "multiSelectDocTypeTrigger"
+  },
+
+  {
+    "controlName": "publication cluster",
+    "type": "id",
+    "value": "multiSelectCluster_JournalTrigger"
+  },
+
+  {
+    "controlName": "content provider cluster",
+    "type": "id",
+    "value": "multiSelectDbFilterTrigger"
+  },
+
+    {
+    "controlName": "language cluster",
+    "type": "id",
+    "value": "multiSelectCluster_LanguageTrigger"
   }
 ]
 
