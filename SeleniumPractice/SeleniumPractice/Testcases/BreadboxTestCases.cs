@@ -32,7 +32,7 @@ namespace SeleniumPractice.TestCases
             basicsearch.selectItemInSearchOption(driver, "Peer Reviewed limiter");
             basicsearch.selectItemInSearchOption(driver, "Apply related words expander");
             basicsearch.clickItem(driver, "search button");
-            resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "pediatrics", "Update");
+            resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "child development", "Update");
             resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
             resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
            //aa
