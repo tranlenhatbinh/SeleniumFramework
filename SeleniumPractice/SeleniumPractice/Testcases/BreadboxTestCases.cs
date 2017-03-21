@@ -12,6 +12,7 @@ namespace SeleniumPractice.TestCases
     {
         IWebDriver driver;
         private BasicSearch basicsearch;
+        private ResultList resultlist;
 
 
         [TestInitialize]
@@ -25,12 +26,15 @@ namespace SeleniumPractice.TestCases
         public void TC2_Verify_that_Clear_All_link_removes_all_items_from_search()
         {
             basicsearch = new BasicSearch(driver);
+            resultlist = new ResultList(driver);
             basicsearch.EnterSearchTerm(driver, TestData.searchTerm);
             basicsearch.ClickSearchOption(driver);
             basicsearch.SelectItemInSearchOption(driver, "Full Text limiter");
             basicsearch.SelectItemInSearchOption(driver, "Peer Reviewed limiter");
             basicsearch.SelectItemInSearchOption(driver, "Apply related words expander");
             basicsearch.clickSearchButton(driver);
+            resultlist.selectSourceType(driver, "source type", "Books", "Cancel");
+
         }
 
         [TestCleanup]

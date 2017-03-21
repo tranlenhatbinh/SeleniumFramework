@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Web.Script.Serialization;
+using System.Threading;
 
 namespace SeleniumPractice.Action.Common
 {
@@ -76,6 +77,16 @@ namespace SeleniumPractice.Action.Common
             }
         }
 
+        public IWebElement FindWebElementXpath(IWebDriver driver, string xpath)
+        {
+            return driver.FindElement(By.XPath(xpath));
+        }
+
+        public void ClickControlXpath(IWebDriver driver, string xpath)
+        {
+            FindWebElementXpath(driver, xpath).Click();
+        }
+
         public void ClickControl(IWebDriver driver, string locator)
         {
             FindWebElement(driver, locator).Click();
@@ -95,6 +106,37 @@ namespace SeleniumPractice.Action.Common
                 FindWebElement(driver, locator).Click();
             }
         }
- 
+
+        public void TickCheckboxXpath(IWebDriver driver, string xpath)
+        {
+            if (FindWebElementXpath(driver, xpath).Selected == false)
+            {
+
+                FindWebElementXpath(driver, xpath).Click();
+            }
+        }
+
+        public bool checkControlDisplay(IWebDriver driver, string locator)
+        {
+            if (FindWebElement(driver, locator).Displayed == true)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public string getAttributeControl (IWebDriver driver, string locator)
+        {
+            string id = FindWebElement(driver, locator).GetAttribute("id").ToString();
+            return id;
+        }
+
+        ///<summary>
+        /// Method to perform sleep action in specific seconds
+        ///</summary>
+        public void Sleep(int second)
+        {
+            Thread.Sleep(second * 1000);
+        }
     }
 }

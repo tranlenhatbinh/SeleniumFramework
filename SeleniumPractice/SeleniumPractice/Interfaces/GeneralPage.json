@@ -3,7 +3,16 @@
     "controlName": "search button",
     "type": "id",
     "value": "SearchButton"
+  },
+  {
+  	 "controlName": "source type",
+	 "type" : "id",
+	 "value": "multiSelectDocTypeTrigger"
+  },
+  {
+	"controlName": "publication cluster",
+	 "type" : "id",
+	 "value": "multiSelectCluster_JournalTrigger"
   }
- 
 ]
 
