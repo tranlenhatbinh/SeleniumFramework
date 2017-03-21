@@ -16,8 +16,8 @@ namespace SeleniumPractice.Action.PageObject
         {
             string id = getAttributeControl(driver, sourceTypeOrCluster);
 
-            string showmorexpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='Show More']",id);
-            string itemxpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='{1}'])]",id,item);
+            string showmorexpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='Show More']", id);
+            string itemxpath = string.Format("//a[@id='{0}']/following-sibling::div//a[.='{1}'])]", id, item);
 
             if (doesElementPresentXpath(driver, itemxpath))
             {
@@ -48,31 +48,10 @@ namespace SeleniumPractice.Action.PageObject
                     {
                         clickControlXpath(driver, "//span[@class='save-cancel-buttons']/input[@value='" + button + "']");
                     }
-                    
                 }
-
-            }
- 
-        }
-
-        public void selectCluster(IWebDriver driver, string locator)
-        {
-            findWebElement(driver, locator).Click();
-        }
-
-        public bool DoesElementPresent(IWebDriver driver,string locator)
-        {
-            try
-            {
-                return findWebElement(driver,locator).Displayed;
-            }
-
-            catch (NoSuchElementException e)
-            {
-                Console.WriteLine(e);
-                return false;
             }
         }
+
 
     }
 }

@@ -12,12 +12,6 @@
   },
 
   {
-    "controlName": "Source Type cluster",
-    "type": "id",
-    "value": "multiSelectDocTypeTrigger"
-  },
-
-  {
     "controlName": " Show More Contain Provider cluster",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilterContent']//a[@title='Show More']"

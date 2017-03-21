@@ -12,35 +12,5 @@ namespace SeleniumPractice.Action.PageObject
             this.driver = driver;
         }
 
-        public void selectClusters(IWebDriver driver, string locator, string itemCluster)
-        {
-            if (DoesElementPresent(driver, itemCluster))
-            {
-                selectCluster(driver, itemCluster);
-            }
-            else
-            {
-                selectCluster(driver, locator);
-                selectCluster(driver, itemCluster);
-            }
-        }
-
-        public void selectShowMore(IWebDriver driver, string locator)
-        {
-            string[] control = getControlValue(locator);
-            string dynamicControl = control[1].ToString();
-            string showmore = string.Format("//a[@id='{0}']/..//a[.='Show More']", dynamicControl);
-            if (driver.FindElement(By.XPath(showmore)).Displayed)
-            {
-                driver.FindElement(By.XPath(showmore)).Click();
-            }
-            else
-            {
-                selectCluster(driver, locator);
-                driver.FindElement(By.XPath(showmore)).Click();
-            }
-        }
-
-      
     }
 }

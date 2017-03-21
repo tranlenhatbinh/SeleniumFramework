@@ -42,7 +42,7 @@ namespace SeleniumPractice.TestCases
             basicsearch = new BasicSearchPage(driver);
             basicsearch.conductSearch(driver, TestData.searchTerm);
             resultlist = new ResultListPage(driver);
-            
+            resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
 
         }
 
