@@ -35,6 +35,7 @@ namespace SeleniumPractice.TestCases
         [TestCleanup]
         public void Testcleanup()
         {
+            updateResultSauceLabs(driver);
             closeBrowser(driver);
         }
     }

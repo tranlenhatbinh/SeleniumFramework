@@ -70,6 +70,15 @@ namespace SeleniumPractice.Action.Common
             return new RemoteWebDriver(uri, caps, TimeSpan.FromSeconds(600));
         }
 
+        public void updateResultSauceLabs(IWebDriver driver)
+        {   
+            if(TestData.runtype.ToUpper() == "SAUCELAB")
+            { 
+            bool passed = TestContext.CurrentTestOutcome == UnitTestOutcome.Passed;
+           ((IJavaScriptExecutor)driver).ExecuteScript("sauce:job-result=" + (passed ? "passed" : "failed"));
+            }
+        }
+        
         // move to managebrowser
         public static void navigateToEbscoPage(IWebDriver driver)
         {
