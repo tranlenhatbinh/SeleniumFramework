@@ -20,8 +20,6 @@ namespace SeleniumPractice.Action.Common
             return classname;
         }
 
-
-        public static string a = GetClassCaller();
         public class control
         {
             public string controlName { get; set; }

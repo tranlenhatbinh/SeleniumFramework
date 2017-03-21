@@ -27,7 +27,7 @@ namespace SeleniumPractice.Action.PageObject
 
         public void selectShowMore(IWebDriver driver, string locator)
         {
-            string[] control = GetControlValue(locator);
+            string[] control = getControlValue(locator);
             string dynamicControl = control[1].ToString();
             string showmore = string.Format("//a[@id='{0}']/..//a[.='Show More']", dynamicControl);
             if (driver.FindElement(By.XPath(showmore)).Displayed)
