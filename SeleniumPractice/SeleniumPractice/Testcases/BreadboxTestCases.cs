@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SeleniumPractice.Action.Common;
 using SeleniumPractice.Action.PageObject;
+
 using OpenQA.Selenium;
 
 
@@ -34,17 +35,7 @@ namespace SeleniumPractice.TestCases
             resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "child development", "Update");
             resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
             resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
-        }
-
-        [TestMethod]
-        public void TC3_Verify_that_clicking_Hyperlinked_items_in_the_breadbox_launches_search_for_that_term()
-        {
-            basicsearch = new BasicSearchPage(driver);
-            basicsearch.conductSearch(driver, TestData.searchTerm);
-            resultlist = new ResultListPage(driver);
-            resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
-            resultlist.selectSourceTypeOrCluster(driver, "limit to", "Full Text", null);
-            resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
+          
         }
 
         [TestCleanup]
