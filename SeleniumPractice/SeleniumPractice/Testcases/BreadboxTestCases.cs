@@ -35,13 +35,13 @@ namespace SeleniumPractice.TestCases
             resultlist.selectSourceTypeOrCluster(driver, "publication cluster", "child development", "Update");
             resultlist.selectSourceTypeOrCluster(driver, "source type", "Academic Journals", null);
             resultlist.selectSourceTypeOrCluster(driver, "language cluster", "english", null);
-          //
+         
         }
 
         [TestCleanup]
         public void Testcleanup()
         {
-            closeBrowser(driver);
+            //closeBrowser(driver);
 
         }
     }
