@@ -25,7 +25,7 @@ namespace SeleniumPractice.Action.PageObject
             }
             else
             {
-                sleep(1);
+                waitForControl(driver, sourceTypeOrCluster, 5);
 
                 clickControl(driver, sourceTypeOrCluster);
 
@@ -38,11 +38,9 @@ namespace SeleniumPractice.Action.PageObject
                 {
                     clickControlXpath(driver, showmorexpath);
 
-                    sleep(1);
+                    waitForControlXpath(driver, "//a[contains(text(),'" + item + "')]/ancestor::td/preceding-sibling::td/input[@type='checkbox']", 5);
 
                     tickCheckboxXpath(driver, "//a[contains(text(),'" + item + "')]/ancestor::td/preceding-sibling::td/input[@type='checkbox']");
-
-                    sleep(1);
 
                     if (button!=null)
                     {
