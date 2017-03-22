@@ -12,7 +12,7 @@ namespace SeleniumPractice.Action.Common
 {
     public class ManageBrowser
     {
-        public IWebDriver OpenBrowser(IWebDriver driver, string browsername)
+        public IWebDriver openBrowser(IWebDriver driver, string browsername)
         {
             if (TestData.runtype.ToUpper() == "LOCAL")
             {
@@ -70,13 +70,22 @@ namespace SeleniumPractice.Action.Common
             return new RemoteWebDriver(uri, caps, TimeSpan.FromSeconds(600));
         }
 
+        public void updateResultSauceLabs(IWebDriver driver)
+        {   
+            if(TestData.runtype.ToUpper() == "SAUCELAB")
+            { 
+            bool passed = TestContext.CurrentTestOutcome == UnitTestOutcome.Passed;
+           ((IJavaScriptExecutor)driver).ExecuteScript("sauce:job-result=" + (passed ? "passed" : "failed"));
+            }
+        }
+        
         // move to managebrowser
-        public static void NavigateToEbscoPage(IWebDriver driver)
+        public static void navigateToEbscoPage(IWebDriver driver)
         {
             driver.Navigate().GoToUrl(TestData.ebscodURL);
         }
 
-        public static void CloseBrowser(IWebDriver driver)
+        public static void closeBrowser(IWebDriver driver)
         {
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Quit();

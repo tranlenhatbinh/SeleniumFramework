@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using SeleniumPractice.Action.Common;
 
 namespace SeleniumPractice.Action.PageObject
 {
-    public class ResultListPage
+    public class ResultListPage : GeneralPage
     {
         IWebDriver driver;
 
@@ -15,5 +11,6 @@ namespace SeleniumPractice.Action.PageObject
         {
             this.driver = driver;
         }
+
     }
 }

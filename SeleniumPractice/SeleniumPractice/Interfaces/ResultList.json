@@ -12,13 +12,13 @@
   },
 
   {
-    "control": " Show More Contain Provider cluster",
+    "controlName": " Show More Contain Provider cluster",
     "type": "xpath",
     "value": "//div[@id='multiSelectDbFilterContent']//a[@title='Show More']"
   },
 
   {
-    "controlName": "Academic Journals source type",
+    "controlName": "Academic Journal source type",
     "type": "id",
     "value": "_doc_type_160MN"
   },
@@ -27,6 +27,11 @@
     "controlName": "English Language cluster",
     "type": "id",
     "value": "_cluster_Language%24english"
+  },
+  {
+    "controlName": "Language cluster",
+    "type": "id",
+    "value": "multiSelectCluster_LanguageTrigger"
   }
 
   
