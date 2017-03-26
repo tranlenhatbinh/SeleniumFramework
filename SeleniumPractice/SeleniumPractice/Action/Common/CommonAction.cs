@@ -168,7 +168,7 @@ namespace SeleniumPractice.Action.Common
         /// <summary>
         /// Method to wait for control by locator
         /// </summary>
-        public void waitForControl(IWebDriver driver, By locator, int timeoutInSeconds)
+        public void waitForControl(IWebDriver driver, String locator, int timeoutInSeconds)
         {
             IWebElement element;
             bool check = false;
@@ -176,7 +176,34 @@ namespace SeleniumPractice.Action.Common
             {
                 try
                 {
-                    element = driver.FindElement(locator);
+                    element = findWebElement(driver, locator);
+                    if (element.Displayed != check)
+                    {
+                        sleep(1);
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    sleep(1);
+                    continue;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Method to wait for control by xpath
+        /// </summary>
+        public void waitForControlXpath(IWebDriver driver, string xpath, int timeoutInSeconds)
+        {
+            IWebElement element;
+            bool check = false;
+            for (int i = 0; i < timeoutInSeconds; i++)
+            {
+                try
+                {
+                    element = findWebElementXpath(driver, xpath);
                     if (element.Displayed != check)
                     {
                         sleep(1);
