@@ -21,7 +21,7 @@ namespace SeleniumPractice.TestCases
             driver = openBrowser(driver, TestData.browser);
             navigateToEbscoPage(driver);
         }
-
+        //123456
         [TestMethod]
         public void TC01_Verify_that_user_is_able_to_delete_fulltext_records_from_folder()
         {
@@ -31,7 +31,7 @@ namespace SeleniumPractice.TestCases
             // 2. Check 'Full Text' limiter checkbox from Result list
             resultList = new ResultListPage(driver);
         }
-
+        
         [TestCleanup]
         public void Testcleanup()
         {
