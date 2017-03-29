@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SeleniumPractice.Action.Common;
-using SeleniumPractice.Action.PageObject;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+﻿using OpenQA.Selenium;
 
 namespace SeleniumPractice.Action.PageObject
 {
@@ -19,29 +11,23 @@ namespace SeleniumPractice.Action.PageObject
             this.driver = driver;
         }
 
-        public void ClickSearchOption(IWebDriver driver)
-        {
-            ClickControl(driver, "search options");
-        }
-
-        public void EnterSearchTerm(IWebDriver driver, string searchterm)
+        public void enterSearchTerm(IWebDriver driver, string searchterm)
         {
 
-            EnterValue(driver, "search box", searchterm);
+            enterValue(driver, "search box", searchterm);
         }
 
-        public void SelectItemInSearchOption(IWebDriver driver, string item)
+        public void selectItemInSearchOption(IWebDriver driver, string item)
         {
-            //
-            TickCheckbox(driver, item);
+            tickCheckbox(driver, item);
         }
 
-        public void ConductSearch(IWebDriver driver, string searchterm)
+        public void conductSearch(IWebDriver driver, string searchterm)
         {
-            EnterValue(driver, "search box", searchterm);
-            ClickControl(driver, "search button");
+            enterValue(driver, "search box", searchterm);
+            clickControl(driver, "search button");
         }
+        
 
-       
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SeleniumPractice.Action.PageObject;
 using SeleniumPractice.Action.Common;
-using System.Threading;
 
 using OpenQA.Selenium;
 
@@ -19,8 +18,8 @@ namespace SeleniumPractice.TestCases
         [TestInitialize]
         public void TestInitialize()
         {
-            driver = OpenBrowser(driver, TestData.browser);
-            NavigateToEbscoPage(driver);
+            driver = openBrowser(driver, TestData.browser);
+            navigateToEbscoPage(driver);
         }
 
         [TestMethod]
@@ -28,7 +27,7 @@ namespace SeleniumPractice.TestCases
         {
             // 1. Conduct a Search term on basic search textbox
             basicSearch = new BasicSearchPage(driver);
-            basicSearch.ConductSearch(driver, TestData.searchTerm);
+            basicSearch.conductSearch(driver, TestData.searchTerm);
             // 2. Check 'Full Text' limiter checkbox from Result list
             resultList = new ResultListPage(driver);
         }
@@ -36,7 +35,8 @@ namespace SeleniumPractice.TestCases
         [TestCleanup]
         public void Testcleanup()
         {
-            CloseBrowser(driver);
+            updateResultSauceLabs(driver);
+            closeBrowser(driver);
         }
     }
 }

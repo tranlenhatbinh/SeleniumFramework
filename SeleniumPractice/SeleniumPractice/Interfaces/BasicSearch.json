@@ -12,12 +12,6 @@
   },
 
   {
-    "controlName": "search options",
-    "type": "id",
-    "value": "options"
-  },
-
-  {
     "controlName": "Peer Reviewed limiter",
     "type": "id",
     "value": "common_RV"
