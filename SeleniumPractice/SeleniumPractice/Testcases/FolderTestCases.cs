@@ -6,6 +6,8 @@ using OpenQA.Selenium;
 
 namespace SeleniumPractice.TestCases
 
+    //The created actions should be reuse, let's update all! 
+
 {
     [TestClass]
     public class FolderTestCases : ManageBrowser
